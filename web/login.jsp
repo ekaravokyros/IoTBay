@@ -13,7 +13,6 @@
     </head>
     <body>
         <h1>Login</h1>
-        <h1>Registration</h1>
         <form action="welcome.jsp" method="post">
             <table>
                 <tr>

@@ -21,13 +21,13 @@
         <h1>Main Page</h1>
         <%
             if (customer == null) {
-            out.println("Customer is " + customer + "!" + "<br>");
+            //out.println("Customer is " + customer + "!" + "<br>");
             %><a href="register.jsp">Register</a><br><%
             }
             
             else if (customer != null) {
-               %>
-                <p align="right">You are logged in as ${customer.fname} ${customer.lname} <${customer.email}><br>
+                %> 
+                <p align="right">You are logged in as ${customer.fname} ${customer.lname} (${customer.email}) <br>
                 <p align="right">To logout please click <a href="logout.jsp">here</a><br>    
                 <% 
             }
