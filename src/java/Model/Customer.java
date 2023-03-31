@@ -20,7 +20,7 @@ public class Customer {
     private String country;
     private String pnumber;
 
-    public Customer(String email, String password, String fname, String lname, String address, String city, String state, String pcode, String country, String pnumber) {
+    public Customer(String email, String password, String fname, String lname, String address, String city, String state, String pcode, String pnumber) {
         this.email = email;
         this.password = password;
         this.fname = fname;
@@ -28,9 +28,6 @@ public class Customer {
         this.address = address;
         this.city = city;
         this.state = state;
-        this.pcode = pcode;
-        this.country = country;
-        this.pnumber = pnumber;
     }
 
     public String getEmail() {
@@ -95,14 +92,6 @@ public class Customer {
 
     public void setPcode(String pcode) {
         this.pcode = pcode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getPnumber() {
