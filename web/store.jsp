@@ -1,18 +1,17 @@
 <%-- 
-    Document   : welcome
-    Created on : 30/03/2023, 10:26:19 PM
+    Document   : store
+    Created on : 31/03/2023, 8:29:39 PM
     Author     : nrsmi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="Model.Customer"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>IoTBay Store</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Coming Soon</h1>
     </body>
 </html>
