@@ -2,13 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package Model;
+import java.io.Serializable;
 
 /**
  *
  * @author nrsmi
  */
-public class Customer {
+
+public class Customer implements Serializable {
     private String email;
     private String password;
     private String fname;
@@ -19,6 +22,10 @@ public class Customer {
     private String pcode;
     private String pnumber;
 
+    public Customer(){
+        
+    }
+    
     public Customer(String email, String password, String fname, String lname, String address, String city, String state, String pcode, String pnumber) {
         this.email = email;
         this.password = password;

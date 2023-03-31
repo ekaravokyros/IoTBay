@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
+import java.io.Serializable;
 
 /**
  *
  * @author nrsmi
  */
-public class Order {
-    
+
+public class Order implements Serializable {
+
 }
