@@ -59,5 +59,6 @@
             </table>
             <input type="submit" value="Register">
         </form>
+        <p><a href="index.jsp">Home</a></p>
     </body>
 </html>

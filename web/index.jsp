@@ -17,6 +17,7 @@
         <h2>The one-stop-shop for all your IoT Device Needs</h2>
         <table>
             <td><a href="login.jsp">Login</a></td>
+            <td><a href="register.jsp">Register</a></td>
             <td><a href="store.jsp">Browse Store</a></td>
         </table>
     </body>

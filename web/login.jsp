@@ -35,5 +35,6 @@
                 </tr>
             </table>          
         </form>
+        <p><a href="index.jsp">Home</a></p>
     </body>
 </html>

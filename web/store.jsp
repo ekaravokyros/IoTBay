@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>Coming Soon</h1>
+        <p><a href="index.jsp">Home</a></p>
     </body>
 </html>
