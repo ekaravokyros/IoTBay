@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>IoTBay Register</title>
+        <title>Register</title>
     </head>
     <body>
         <h1>Registration</h1>

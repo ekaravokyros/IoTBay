@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>IoTBay Store</title>
+        <title>Store</title>
     </head>
     <body>
         <h1>Coming Soon</h1>

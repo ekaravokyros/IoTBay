@@ -10,10 +10,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Main Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            Customer customer = (Customer)session.getAttribute("customer");
+        %>
+        <h1>Main Page</h1>
+        <%
+            if (customer == null) {
+            out.println("Customer is " + customer + "!" + "<br>");
+            %><a href="register.jsp">Register</a><br><%
+            }
+            
+            else if (customer != null) {
+               %>
+                <p align="right">You are logged in as ${customer.fname} ${customer.lname} <${customer.email}><br>
+                <p align="right">To logout please click <a href="logout.jsp">here</a><br>    
+                <% 
+            }
+        %>        
+        </p>
     </body>
 </html>

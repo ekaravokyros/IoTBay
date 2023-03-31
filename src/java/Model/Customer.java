@@ -17,7 +17,6 @@ public class Customer {
     private String city;
     private String state;
     private String pcode;
-    private String country;
     private String pnumber;
 
     public Customer(String email, String password, String fname, String lname, String address, String city, String state, String pcode, String pnumber) {

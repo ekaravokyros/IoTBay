@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Welcome</title>
     </head>
     <body>
         <h1>Welcome</h1>
@@ -45,8 +45,8 @@
             }
         %>
         <% 
-            Customer customer = new Customer(email, password, fname, lname, address, city, state, pcode, pnumber);
-            session.setAttribute("Customer", customer);
+            Customer customer = new Customer(email, password, fname, lname, address, city, state, pcode, pnumber); 
+            session.setAttribute("customer", customer);
         %>
     </body>
 </html>
