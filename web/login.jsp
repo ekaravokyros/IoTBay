@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Login</title>
     </head>
     <body>
@@ -35,6 +36,6 @@
                 </tr>
             </table>          
         </form>
-        <p><a href="index.jsp">Home</a></p>
+        <p><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

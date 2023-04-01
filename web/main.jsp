@@ -12,6 +12,7 @@
     <head>
         <title>Main Page</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -28,7 +29,8 @@
             else if (customer != null) {
                 %> 
                 <p align="right">You are logged in as ${customer.fname} ${customer.lname} (${customer.email}) <br>
-                <p align="right">To logout please click <a href="logout.jsp">here</a><br>    
+                <p align="right"><a class="button" href="logout.jsp">Logout</a><br>
+                <p align="left"><a class="button" href="account.jsp">My Account</a><br>
                 <% 
             }
         %>        

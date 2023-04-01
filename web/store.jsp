@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Store</title>
     </head>
     <body>
         <h1>Coming Soon</h1>
-        <p><a href="index.jsp">Home</a></p>
+        <p><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

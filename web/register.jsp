@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Register</title>
     </head>
     <body>
@@ -59,6 +60,6 @@
             </table>
             <input type="submit" value="Register">
         </form>
-        <p><a href="index.jsp">Home</a></p>
+        <p><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

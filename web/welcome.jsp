@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Welcome</title>
     </head>
     <body>
@@ -48,5 +49,6 @@
             Customer customer = new Customer(email, password, fname, lname, address, city, state, pcode, pnumber); 
             session.setAttribute("customer", customer);
         %>
+        <p><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

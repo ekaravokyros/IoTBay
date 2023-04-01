@@ -10,15 +10,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>IoTBay</title>
     </head>
     <body>
         <h1>Welcome to IoTBay</h1>
         <h2>The one-stop-shop for all your IoT Device Needs</h2>
         <table>
-            <td><a href="login.jsp">Login</a></td>
-            <td><a href="register.jsp">Register</a></td>
-            <td><a href="store.jsp">Browse Store</a></td>
+            <td><a class="button" href="login.jsp">Login</a></td>
+            <td><a class="button" href="register.jsp">Register</a></td>
+            <td><a class="button" href="store.jsp">Store</a></td>
         </table>
     </body>
 </html>
