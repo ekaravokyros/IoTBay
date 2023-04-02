@@ -30,6 +30,7 @@
                 %> 
                 <p align="right">You are logged in as ${customer.fname} ${customer.lname} (${customer.email}) <br>
                 <p align="right"><a class="button" href="logout.jsp">Logout</a><br>
+                <p align="right"><a class="button" href="index.jsp">Home</a></p>
                 <p align="left"><a class="button" href="account.jsp">My Account</a><br>
                 <% 
             }

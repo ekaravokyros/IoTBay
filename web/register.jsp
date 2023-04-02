@@ -58,8 +58,8 @@
                     <td><input type="checkbox" name="tos" value="ON" /></td>
                 </tr>
             </table>
-            <input type="submit" value="Register">
+            <input class="button" type="submit" value="Register">
         </form>
-        <p><a class="button" href="index.jsp">Home</a></p>
+        <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

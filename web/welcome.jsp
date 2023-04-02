@@ -29,9 +29,8 @@
 
             if (tos == null) {
                 out.println("Sorry, you must agree to the Terms of Service." + "<br>");
-                out.println("Click ");               
-                %><a href="register.jsp">here</a><%
-                out.println(" to go back" + "<br>");
+                out.println("Click below to go back."+ "<br>");               
+                %><a class="button" href="register.jsp">Back</a><%
             }     
             
             else if (tos.equals("ON")){
@@ -40,15 +39,14 @@
                 out.println("Your password is " + password + "." + "<br>");
                 out.println("Address is " + address + " " + city + ", " + state + " " + pcode + "<br>");
                 out.println("Your best contact number is " + pnumber + "." + "<br>");  
-                out.println("Click ");               
-                %><a href="main.jsp">here</a><%
-                out.println(" proceed to the main page." + "<br>");
+                out.println("Click below to proceed to the main page." + "<br>");               
+                %><a class="button" href="main.jsp">Main</a><%
             }
         %>
         <% 
             Customer customer = new Customer(email, password, fname, lname, address, city, state, pcode, pnumber); 
             session.setAttribute("customer", customer);
         %>
-        <p><a class="button" href="index.jsp">Home</a></p>
+        <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

@@ -15,7 +15,8 @@
         <title>Logout</title>
     </head>
     <body>
-        <p1>You have been logged out. Click <a href="index.jsp">here</a> to return to the home page.</p1>
+        <p1>You have been logged out.</p1>
+        <p><a class="button" href="index.jsp">Home</a></p>
         <% session.invalidate(); %>
     </body>
 </html>
