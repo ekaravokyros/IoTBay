@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form action="welcome.jsp" method="post">
+        <form action="welcome_1.jsp" method="post">
             <table>
                 <tr>
                     <td><label for="email">Email</label></td>
@@ -26,13 +26,13 @@
                     <td><input type="password" id="password" name="password"></td>
                 </tr>
             </table>
-            <input type="submit" value="Login">
+            <input class="button" type="submit" value="Login">
         </form>
         <form action="register.jsp" method="post">
             <table>
                 <tr>
                     <td><label for="email">Don't have an account register here</label></td>
-                    <td><input type="submit" value="Register"></td>
+                    <td><input class="button" type="submit" value="Register"></td>
                 </tr>
             </table>          
         </form>

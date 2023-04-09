@@ -22,8 +22,7 @@
         <h1>Main Page</h1>
         <%
             if (customer == null) {
-            //out.println("Customer is " + customer + "!" + "<br>");
-            %><a href="register.jsp">Register</a><br><%
+            %><a class="button" href="register.jsp">Register</a><br><%
             }
             
             else if (customer != null) {

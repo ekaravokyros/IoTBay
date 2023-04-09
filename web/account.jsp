@@ -75,13 +75,18 @@
                 </tr>
                 <tr><td></td>
                     <td>
-                        <input type="submit" value="Update">
+                        <input class="button" type="submit" value="Update">
                         <input type="hidden" name="updated" value="updated">
                     </td>
                 </tr>
+                <tr><br></tr>
+                <tr>
+                    <td><a class="button" href="main.jsp">Main</a></td>
+                </tr>
             </table>
         </form>
-        <p><a class="button" href="index.jsp">Home</a></p>
+
+        <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>
 
