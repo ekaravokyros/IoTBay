@@ -85,8 +85,6 @@
                 </tr>
             </table>
         </form>
-
-        <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>
 

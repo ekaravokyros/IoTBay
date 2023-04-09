@@ -47,6 +47,5 @@
             Customer customer = new Customer(email, password, fname, lname, address, city, state, pcode, pnumber); 
             session.setAttribute("customer", customer);
         %>
-        <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>
