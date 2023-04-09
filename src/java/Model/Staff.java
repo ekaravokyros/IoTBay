@@ -11,6 +11,6 @@ import java.io.Serializable;
  * @author nrsmi
  */
 
-public class Staff implements Serializable {
+public class Staff extends User implements Serializable {
     
 }
