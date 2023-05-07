@@ -19,6 +19,11 @@ public class DBManager {
     }
     
 //START OF CODE AUTHORED BY NICHOLAS SMITH 11378054
+    public void addItem (int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Features, String product_Powersource, String product_Dimensions, double product_Weight, String product_Warranty, String product_Image, double product_Price, int product_Stock, boolean product_Avail, String product_Category, double product_Discount, String last_Edited_By)
+            throws SQLException {
+        String query = "INSERT INTO JB.PRODUCTS VALUES ("+product_ID+","+product_Name+","+product_Description+","+product_Model+","+product_Type+","+product_Manufacturer+","+product_Features+","+product_Powersource+","+product_Dimensions+","+product_Weight+","+product_Warranty+","+product_Image+","+product_Price+","+product_Stock+","+product_Avail+","+product_Category+","+product_Discount+","+last_Edited_By+"')";
+        st.executeUpdate(query);               
+    }
     
     public ArrayList<Product> showProducts() 
             throws SQLException {

@@ -14,6 +14,12 @@
        <load-on-startup>0</load-on-startup>
     </servlet>
     
+    <servlet>
+       <servlet-name>AddItemServlet</servlet-name>
+       <servlet-class>Controller.AddItemServlet</servlet-class>
+       <load-on-startup>0</load-on-startup>
+    </servlet>
+    
     <servlet-mapping>
        <servlet-name>ConnServlet</servlet-name>
        <url-pattern>/ConnServlet</url-pattern>
@@ -23,11 +29,16 @@
        <servlet-name>ShowProductsServlet</servlet-name>
        <url-pattern>/ShowProductsServlet</url-pattern>
     </servlet-mapping>
-    
-   <session-config>
+
+    <servlet-mapping>
+       <servlet-name>AddItemServlet</servlet-name>
+       <url-pattern>/AddItemServlet</url-pattern>
+    </servlet-mapping>
+            
+    <session-config>
        <session-timeout>
            30
        </session-timeout>
-  </session-config>
+    </session-config>
 
 </web-app>
