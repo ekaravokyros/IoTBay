@@ -14,5 +14,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>
     </body>
 </html>
