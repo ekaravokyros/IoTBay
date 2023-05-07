@@ -21,5 +21,6 @@
             <td><a class="button" href="register.jsp">Register</a></td>
             <td><a class="button" href="store.jsp">Store</a></td>
         </table>
+        <jsp:include page="/ConnServlet" flush="true" />
     </body>
 </html>
