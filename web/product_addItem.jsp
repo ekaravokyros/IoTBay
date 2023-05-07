@@ -5,14 +5,18 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Model.Product"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <title>JSP Page</title>
+        <title>Add Produce</title>
     </head>
     <body>
+        <%
+            String outcome = (String)session.getAttribute("outcome");
+        %>
         <h1>Add Product to Store</h1>
         
         <form action="AddItemServlet" method="post" autocomplete="off">
@@ -110,5 +114,6 @@
             <input class="button" type="submit" value="Add Product">
         </form>
         <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>
+        <span><%= (outcome != null ? outcome : "")%></span>
     </body>
 </html>
