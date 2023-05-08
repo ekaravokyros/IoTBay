@@ -19,7 +19,7 @@
         %>
         <h1>Add Product to Store</h1>
         
-        <form action="AddItemServlet" method="post" autocomplete="off">
+        <form action="ProductAddServlet" method="post" autocomplete="off">
             <table>
                 <tr>
                     <td><label for="product_ID">Product ID: </td>

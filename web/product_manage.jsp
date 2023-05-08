@@ -15,8 +15,8 @@
     <body>
         <h1>Product Management</h1>
         <p align="left"><a class="button" href="product_addItem.jsp">Add Product</a></p>
-        <p align="left"><a class="button" href="ShowProductsServlet">Show Products</a></p>
-        <p align="left"><a class="button" href="product_search.jsp">Search for a Product</a></p>
+        <p align="left"><a class="button" href="ProductsShowServlet">Show Products</a></p>
+        <p align="left"><a class="button" href="product_search.jsp">Search Products</a></p>
         <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

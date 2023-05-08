@@ -20,7 +20,7 @@ import DAO.*;
  *
  * @author nrsmi
  */
-public class AddItemServlet extends HttpServlet{
+public class ProductAddServlet extends HttpServlet{
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
@@ -58,7 +58,7 @@ public class AddItemServlet extends HttpServlet{
                     request.getRequestDispatcher("product_addItem.jsp").include(request, response);
                 }
             } catch (SQLException ex){
-                Logger.getLogger(AddItemServlet.class.getName()).log(Level.SEVERE, null, ex); 
+                Logger.getLogger(ProductAddServlet.class.getName()).log(Level.SEVERE, null, ex); 
             }
         }
 }

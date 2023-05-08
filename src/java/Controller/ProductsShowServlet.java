@@ -18,7 +18,7 @@ package Controller;
     import Model.Product;
     import java.util.ArrayList;
 
-public class ShowProductsServlet extends HttpServlet{
+public class ProductsShowServlet extends HttpServlet{
        
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +39,7 @@ public class ShowProductsServlet extends HttpServlet{
                     response.sendRedirect("product_manage.jsp");
                 }
             } catch (SQLException ex){
-                Logger.getLogger(ShowProductsServlet.class.getName()).log(Level.SEVERE, null, ex); 
+                Logger.getLogger(ProductsShowServlet.class.getName()).log(Level.SEVERE, null, ex); 
                 
             }
        }

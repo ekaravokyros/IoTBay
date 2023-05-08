@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee  http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-
     <servlet>
-       <servlet-name>ConnServlet</servlet-name>
-       <servlet-class>Controller.ConnServlet</servlet-class>
-       <load-on-startup>0</load-on-startup>
+        <servlet-name>ConnServlet</servlet-name>
+        <servlet-class>Controller.ConnServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
-
     <servlet>
-       <servlet-name>ShowProductsServlet</servlet-name>
-       <servlet-class>Controller.ShowProductsServlet</servlet-class>
-       <load-on-startup>0</load-on-startup>
+        <servlet-name>ProductsShowServlet</servlet-name>
+        <servlet-class>Controller.ProductsShowServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
-    
     <servlet>
-       <servlet-name>AddItemServlet</servlet-name>
-       <servlet-class>Controller.AddItemServlet</servlet-class>
-       <load-on-startup>0</load-on-startup>
+        <servlet-name>ProductAddServlet</servlet-name>
+        <servlet-class>Controller.ProductAddServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
-    
+    <servlet>
+        <servlet-name>ProductSearchServlet</servlet-name>
+        <servlet-class>Controller.ProductSearchServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
     <servlet-mapping>
-       <servlet-name>ConnServlet</servlet-name>
-       <url-pattern>/ConnServlet</url-pattern>
+        <servlet-name>ConnServlet</servlet-name>
+        <url-pattern>/ConnServlet</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
-       <servlet-name>ShowProductsServlet</servlet-name>
-       <url-pattern>/ShowProductsServlet</url-pattern>
+        <servlet-name>ProductsShowServlet</servlet-name>
+        <url-pattern>/ProductsShowServlet</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
-       <servlet-name>AddItemServlet</servlet-name>
-       <url-pattern>/AddItemServlet</url-pattern>
+        <servlet-name>ProductAddServlet</servlet-name>
+        <url-pattern>/ProductAddServlet</url-pattern>
     </servlet-mapping>
-            
+    <servlet-mapping>
+        <servlet-name>ProductSearchServlet</servlet-name>
+        <url-pattern>/ProductSearchServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
-       <session-timeout>
+        <session-timeout>
            30
        </session-timeout>
     </session-config>
-
 </web-app>

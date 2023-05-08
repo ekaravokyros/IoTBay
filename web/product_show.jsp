@@ -22,7 +22,7 @@
             String display = (String) session.getAttribute("display");
         %>
         <h1>IoTBay Products</h1>
-        
+        <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>       
         <table>
             <tr>
                 <th><b>Product ID</b></th>  
@@ -42,7 +42,7 @@
                 <th><b>Product Availability</b></th>                  
                 <th><b>Product Category</b></th>  
                 <th><b>Product Discount</b></th>
-                <th><b>Last Edited By</b></th>     
+                <th><b>Last Edited By</b></th>
             </tr>
             <%
                 if (products != null) {
@@ -72,7 +72,6 @@
             <% } %>
         </table>
         <br>
-        <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>
             <% } else { %>
             <span><= (display != null ? display : "")%></span>
             <% } %>
