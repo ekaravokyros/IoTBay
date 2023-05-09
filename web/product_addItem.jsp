@@ -62,7 +62,7 @@
                 </tr>                
                 <tr>
                     <td><label for="product_Dimensions">Product Dimensions: </td>
-                    <td><input type="text" id="product_Dimensions" name="product_Dimensionse"></td>
+                    <td><input type="text" id="product_Dimensions" name="product_Dimensions"></td>
                     <td></td>
                 </tr>                
                 <tr>

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import DAO.*;
+import Model.Product;
 
 /**
  *
@@ -26,7 +27,27 @@ public class ProductDeleteServlet extends HttpServlet {
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
             HttpSession session = request.getSession();
-            DBManager manager = (DBManager) session.getAttribute("manager");  
+            DBManager manager = (DBManager) session.getAttribute("manager");
+            
+            int product_ID = Integer.parseInt(request.getParameter("product_ID"));
+            
+            try {
+                Boolean check = manager.checkProduct_ID(product_ID);
+                if (check) {
+                    manager.deleteProduct(product_ID);                        
+                    session.setAttribute("msg_delete", "Product has been deleted");
+                    
+                    request.getRequestDispatcher("product_delete.jsp").include(request, response);
+                    response.sendRedirect("product_manage.jsp");
+                } else {  
+                    session.setAttribute("msg_delete", "Product has NOT been deleted");
+                    
+                    request.getRequestDispatcher("product_delete.jsp").include(request, response);
+                    response.sendRedirect("product_delete.jsp");           
+                }
+            } catch (SQLException ex){
+                Logger.getLogger(ProductDeleteServlet.class.getName()).log(Level.SEVERE, null, ex); 
+            }
         }
 }
 

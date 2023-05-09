@@ -20,6 +20,16 @@
         <servlet-class>Controller.ProductSearchServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>ProductUpdateServlet</servlet-name>
+        <servlet-class>Controller.ProductUpdateServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <servlet-class>Controller.ProductDeleteServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -35,6 +45,14 @@
     <servlet-mapping>
         <servlet-name>ProductSearchServlet</servlet-name>
         <url-pattern>/ProductSearchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductUpdateServlet</servlet-name>
+        <url-pattern>/ProductUpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <url-pattern>/ProductDeleteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

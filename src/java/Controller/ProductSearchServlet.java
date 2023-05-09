@@ -33,11 +33,11 @@ public class ProductSearchServlet extends HttpServlet {
             session.setAttribute("product", null);
             session.setAttribute("result", null);
             
-            String productName = request.getParameter("product_name");
+            String product_Name = request.getParameter("product_name");
             try {
-                boolean check = manager.checkProduct(productName);
+                boolean check = manager.checkProduct_Name(product_Name);
                 if (check){
-                    Product product = manager.getProduct(productName);
+                    Product product = manager.getProduct(product_Name);
                     session.setAttribute("product",product);
                     
                     request.getRequestDispatcher("product_search.jsp").include(request, response);

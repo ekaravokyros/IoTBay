@@ -49,13 +49,14 @@ public class ProductAddServlet extends HttpServlet{
             
             try {
                 if (product_Name != null) {
-                    manager.addItem(product_ID, product_Name, product_Description, product_Model, product_Type, product_Manufacturer, product_Features, product_Powersource, product_Dimensions, product_Weight, product_Warranty, product_Image, product_Price, product_Stock, product_Avail, product_Category, product_Discount, last_Edited_By);
+                    manager.addProduct(product_ID, product_Name, product_Description, product_Model, product_Type, product_Manufacturer, product_Features, product_Powersource, product_Dimensions, product_Weight, product_Warranty, product_Image, product_Price, product_Stock, product_Avail, product_Category, product_Discount, last_Edited_By);
                     session.setAttribute("outcome", "Product has been added to the Store");
                     request.getRequestDispatcher("product_addItem.jsp").include(request, response);
                     response.sendRedirect("product_addItem.jsp");
                 } else {
                     session.setAttribute("outcome", "Product has NOT been added to the Store");
                     request.getRequestDispatcher("product_addItem.jsp").include(request, response);
+                    response.sendRedirect("product_addItem.jsp");
                 }
             } catch (SQLException ex){
                 Logger.getLogger(ProductAddServlet.class.getName()).log(Level.SEVERE, null, ex); 

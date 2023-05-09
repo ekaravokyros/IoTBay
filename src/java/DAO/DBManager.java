@@ -19,10 +19,22 @@ public class DBManager {
     }
     
 //START OF CODE AUTHORED BY NICHOLAS SMITH 11378054
-    public void addItem (int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Features, String product_Powersource, String product_Dimensions, double product_Weight, String product_Warranty, String product_Image, double product_Price, int product_Stock, boolean product_Avail, String product_Category, double product_Discount, String last_Edited_By)
+    public void addProduct (int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Features, String product_Powersource, String product_Dimensions, double product_Weight, String product_Warranty, String product_Image, double product_Price, int product_Stock, boolean product_Avail, String product_Category, double product_Discount, String last_Edited_By)
             throws SQLException {
         String query = "INSERT INTO JB.PRODUCTS VALUES ("+product_ID+","+product_Name+","+product_Description+","+product_Model+","+product_Type+","+product_Manufacturer+","+product_Features+","+product_Powersource+","+product_Dimensions+","+product_Weight+","+product_Warranty+","+product_Image+","+product_Price+","+product_Stock+","+product_Avail+","+product_Category+","+product_Discount+","+last_Edited_By+"')";
         st.executeUpdate(query);               
+    }
+    
+    public void updateProduct (int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Features, String product_Powersource, String product_Dimensions, double product_Weight, String product_Warranty, String product_Image, double product_Price, int product_Stock, boolean product_Avail, String product_Category, double product_Discount, String last_Edited_By)
+            throws SQLException {
+        String query = "UPDATE JB.PRODUCTS SET PRODUCT_NAME = ("+product_Name+"), PRODUCT_DESCRIPTION  = ("+product_Description+"), PRODUCT_MODEL = ("+product_Model+"), PRODUCT_TYPE = ("+product_Type+"), PRODUCT_MANUFACTURER = ("+product_Manufacturer+"), PRODUCT_FEATURES = ("+product_Features+"), PRODUCT_POWERSOURCE = ("+product_Powersource+"), PRODUCT_DIMENSIONS = ("+product_Dimensions+"), PRODUCT_WEIGHT = ("+product_Weight+"), PRODUCT_WARRANTY = ("+product_Warranty+"), PRODUCT_IMAGE = ("+product_Image+"), PRODUCT_PRICE = ("+product_Price+"), PRODUCT_STOCK = ("+product_Stock+"), PRODUCT_AVAIL = ("+product_Avail+"), PRODUCT_CATEGORY = ("+product_Category+"), PRODUCT_DISCOUNT = ("+product_Discount+"), LAST_EDITED_BY = ("+last_Edited_By+") WHERE PRODUCT ID=("+product_ID+")";
+        ResultSet rs = st.executeQuery(query);
+    }
+    
+    public void deleteProduct(int product_ID)
+            throws SQLException {
+        String query = "DELETE FROM JB.PRODUCTS WHERE (PRODUCT_ID) = '"+product_ID+"'";
+        ResultSet rs = st.executeQuery(query);
     }
     
     public ArrayList<Product> showProducts() 
@@ -54,7 +66,7 @@ public class DBManager {
         }
         return products; 
     }
-    public boolean checkProduct(String product_search) 
+    public boolean checkProduct_Name(String product_search) 
             throws SQLException {
         String query = "SELECT * FROM JB.PRODUCTS WHERE (PRODUCT_NAME) = '"+product_search+"'";
         ResultSet rs = st.executeQuery(query);
@@ -63,6 +75,21 @@ public class DBManager {
             String product_Name = rs.getString(2);
             
             if (product_Name.equals(product_search)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean checkProduct_ID(int product_ID) 
+            throws SQLException {
+        String query = "SELECT * FROM JB.PRODUCTS WHERE (PRODUCT_ID) = '"+product_ID+"'";
+        ResultSet rs = st.executeQuery(query);
+        
+        while (rs.next()) {
+            String product_Name = rs.getString(1);
+            
+            if (product_Name.equals(product_ID)){
                 return true;
             }
         }
