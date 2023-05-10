@@ -32,7 +32,9 @@ public class DBManager {
     
     public void deleteProduct(int product_ID)
             throws SQLException {
-        st.executeUpdate("DELETE FROM JB.PRODUCTS WHERE (PRODUCT_ID) = '"+product_ID+"'");
+        //prepare statement
+        st.executeUpdate("DELETE FROM JB.PRODUCTS WHERE PRODUCT_ID = "+product_ID);
+        //st.executeUpdate("DELETE FROM JB.PRODUCTS WHERE PRODUCT_ID = CAST("+product_ID+" AS CHAR");
     } 
     
     public ArrayList<Product> showProducts() 
@@ -81,7 +83,7 @@ public class DBManager {
     
     public boolean checkProduct_ID(int product_ID) 
             throws SQLException {
-        String query = "SELECT * FROM JB.PRODUCTS WHERE (PRODUCT_ID) = '"+product_ID+"'";
+        String query = "SELECT * FROM JB.PRODUCTS WHERE (PRODUCT_ID) = "+ product_ID;
         ResultSet rs = st.executeQuery(query);
         
         while (rs.next()) {

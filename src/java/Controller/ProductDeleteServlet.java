@@ -30,24 +30,27 @@ public class ProductDeleteServlet extends HttpServlet {
             DBManager manager = (DBManager) session.getAttribute("manager");
             
             int product_ID = Integer.parseInt(request.getParameter("product_ID"));
+            System.out.println(product_ID);
             
             try {
                 Boolean check = manager.checkProduct_ID(product_ID);
+                
                 if (check) {
                     manager.deleteProduct(product_ID);                        
                     session.setAttribute("msg_delete", "Product has been deleted");
                     
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
+                    
                 } else {  
                     session.setAttribute("msg_delete", "Product has NOT been deleted");
                     
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
-                             
+                            
                 }
             } catch (SQLException ex){
                 Logger.getLogger(ProductDeleteServlet.class.getName()).log(Level.SEVERE, null, ex); 
             }
-            response.sendRedirect("product_delconfirm.jsp");  
+        response.sendRedirect("product_delconfirm.jsp");    
         }
 }
 

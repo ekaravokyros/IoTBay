@@ -29,6 +29,7 @@ public class ProductUpdateServlet extends HttpServlet {
             HttpSession session = request.getSession();
             DBManager manager = (DBManager) session.getAttribute("manager"); 
             
+            
             int product_ID = Integer.parseInt(request.getParameter("product_ID"));
             String product_Name = request.getParameter("product_Name");
             String product_Description = request.getParameter("product_Description");
