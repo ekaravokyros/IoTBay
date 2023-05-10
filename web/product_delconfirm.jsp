@@ -12,7 +12,12 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Delete</title>
     </head>
+        <%
+            String msg_delete = (String) session.getAttribute("msg_delete"); 
+        %>
     <body>
-        <h1>Delete Confirmation</h1>
+        <h1>Delete Results</h1>
+        <span><%= (msg_delete)%></span><br>
+        <a class="button" href="product_manage.jsp">Product Management</a>
     </body>
 </html>

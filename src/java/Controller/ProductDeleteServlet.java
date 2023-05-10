@@ -37,13 +37,11 @@ public class ProductDeleteServlet extends HttpServlet {
                 
                 if (check) {
                     manager.deleteProduct(product_ID);                        
-                    session.setAttribute("msg_delete", "Product has been deleted");
-                    
+                    session.setAttribute("msg_delete", "Product has been deleted");                    
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
                     
                 } else {  
-                    session.setAttribute("msg_delete", "Product has NOT been deleted");
-                    
+                    session.setAttribute("msg_delete", "Product has NOT been deleted");                   
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
                             
                 }
