@@ -13,7 +13,7 @@
         <title>Register</title>
     </head>
     <body>
-        <h1>Registration123</h1>
+        <h1>Registration</h1>
         <form action="welcome.jsp" method="post">
             <table>
                 <tr>
