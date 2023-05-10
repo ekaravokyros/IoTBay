@@ -60,18 +60,17 @@ public class ProductUpdateServlet extends HttpServlet {
                     session.setAttribute("product", product);
                     session.setAttribute("updated", "Product has been updated");
                     
-                    request.getRequestDispatcher("product_update.jsp").include(request, response);
-                    response.sendRedirect("product_update.jsp");
+                    request.getRequestDispatcher("product_update.jsp").include(request, response);  
                 } else {  
                     Product product = manager.getProduct(product_Name);
                     session.setAttribute("product",product);
                     session.setAttribute("updated", "Product has NOT been updated");
                     
-                    request.getRequestDispatcher("product_update.jsp").include(request, response);
-                    response.sendRedirect("product_update.jsp");           
+                    request.getRequestDispatcher("product_update.jsp").include(request, response);          
                 }
             } catch (SQLException ex){
                 Logger.getLogger(ProductUpdateServlet.class.getName()).log(Level.SEVERE, null, ex); 
             }
+            response.sendRedirect("product_update.jsp");
         }
 }

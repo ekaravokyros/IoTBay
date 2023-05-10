@@ -38,16 +38,16 @@ public class ProductDeleteServlet extends HttpServlet {
                     session.setAttribute("msg_delete", "Product has been deleted");
                     
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
-                    response.sendRedirect("product_manage.jsp");
                 } else {  
                     session.setAttribute("msg_delete", "Product has NOT been deleted");
                     
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
-                    response.sendRedirect("product_delete.jsp");           
+                             
                 }
             } catch (SQLException ex){
                 Logger.getLogger(ProductDeleteServlet.class.getName()).log(Level.SEVERE, null, ex); 
             }
+            response.sendRedirect("product_delconfirm.jsp");  
         }
 }
 
