@@ -19,40 +19,30 @@ public class Product implements Serializable {
     private String product_Model;
     private String product_Type;
     private String product_Manufacturer;
-    private String product_Features;
     private String product_Powersource;
-    private String product_Dimensions;
     private double product_Weight;
     private String product_Warranty;
-    private String product_Image; 
     private double product_Price;
     private int product_Stock;
     private boolean product_Avail;
-    private String product_Category;
-    private double product_Discount;
     private String last_Edited_By;
     
     public Product (){
     }
 
-    public Product(int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Features, String product_Powersource, String product_Dimensions, double product_Weight, String product_Warranty, String product_Image, double product_Price, int product_Stock, boolean product_Avail, String product_Category, double product_Discount, String last_Edited_By) {
+    public Product(int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Powersource, double product_Weight, String product_Warranty, double product_Price, int product_Stock, boolean product_Avail,String last_Edited_By) {
         this.product_ID = product_ID;
         this.product_Name = product_Name;
         this.product_Description = product_Description;
         this.product_Model = product_Model;
         this.product_Type = product_Type;
         this.product_Manufacturer = product_Manufacturer;
-        this.product_Features = product_Features;
         this.product_Powersource = product_Powersource;
-        this.product_Dimensions = product_Dimensions;
         this.product_Weight = product_Weight;
         this.product_Warranty = product_Warranty;
-        this.product_Image = product_Image;
         this.product_Price = product_Price;
         this.product_Stock = product_Stock;
         this.product_Avail = product_Avail;
-        this.product_Category = product_Category;
-        this.product_Discount = product_Discount;
         this.last_Edited_By = last_Edited_By;
     }
 
@@ -104,28 +94,12 @@ public class Product implements Serializable {
         this.product_Manufacturer = product_Manufacturer;
     }
 
-    public String getProduct_Features() {
-        return product_Features;
-    }
-
-    public void setProduct_Features(String product_Features) {
-        this.product_Features = product_Features;
-    }
-
     public String getProduct_Powersource() {
         return product_Powersource;
     }
 
     public void setProduct_Powersource(String product_Powersource) {
         this.product_Powersource = product_Powersource;
-    }
-
-    public String getProduct_Dimensions() {
-        return product_Dimensions;
-    }
-
-    public void setProduct_Dimensions(String product_Dimensions) {
-        this.product_Dimensions = product_Dimensions;
     }
 
     public double getProduct_Weight() {
@@ -142,14 +116,6 @@ public class Product implements Serializable {
 
     public void setProduct_Warranty(String product_Warranty) {
         this.product_Warranty = product_Warranty;
-    }
-
-    public String getProduct_Image() {
-        return product_Image;
-    }
-
-    public void setProduct_Image(String product_Image) {
-        this.product_Image = product_Image;
     }
 
     public double getProduct_Price() {
@@ -174,22 +140,6 @@ public class Product implements Serializable {
 
     public void setProduct_Avail(boolean product_Avail) {
         this.product_Avail = product_Avail;
-    }
-
-    public String getProduct_Category() {
-        return product_Category;
-    }
-
-    public void setProduct_Category(String product_Category) {
-        this.product_Category = product_Category;
-    }
-
-    public double getProduct_Discount() {
-        return product_Discount;
-    }
-
-    public void setProduct_Discount(double product_Discount) {
-        this.product_Discount = product_Discount;
     }
 
     public String getLast_Edited_By() {

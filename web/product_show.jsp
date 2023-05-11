@@ -30,18 +30,13 @@
                 <th><b>Product Description</b></th>                  
                 <th><b>Product Model</b></th>                  
                 <th><b>Product Type</b></th>                  
-                <th><b>Product Manufacturer</b></th>                  
-                <th><b>Product Features</b></th>                  
-                <th><b>Product Powersource</b></th>                  
-                <th><b>Product Dimensions</b></th>                  
-                <th><b>Product Weight</b></th>                  
-                <th><b>Product Warranty</b></th>                  
-                <th><b>Product Image</b></th>                  
+                <th><b>Product Manufacturer</b></th>                                
+                <th><b>Product Powersource</b></th>                                 
+                <th><b>Product Weight (g)</b></th>                  
+                <th><b>Product Warranty</b></th>                                  
                 <th><b>Product Price</b></th>  
                 <th><b>Product Stock</b></th>                 
                 <th><b>Product Availability</b></th>                  
-                <th><b>Product Category</b></th>  
-                <th><b>Product Discount</b></th>
                 <th><b>Last Edited By</b></th>
             </tr>
             <%
@@ -55,17 +50,12 @@
                 <td><p><%=p.getProduct_Model()%></p></td>        
                 <td><p><%=p.getProduct_Type()%></p></td>
                 <td><p><%=p.getProduct_Manufacturer()%></p></td>
-                <td><p><%=p.getProduct_Features()%></p></td>
                 <td><p><%=p.getProduct_Powersource()%></p></td>
-                <td><p><%=p.getProduct_Dimensions()%></p></td>
                 <td><p><%=p.getProduct_Weight()%></p></td>
                 <td><p><%=p.getProduct_Warranty()%></p></td>
-                <td><p><%=p.getProduct_Image()%></p></td>
                 <td><p><%=p.getProduct_Price()%></p></td>
                 <td><p><%=p.getProduct_Stock()%></p></td>
                 <td><p><%=p.isProduct_Avail()%></p></td>
-                <td><p><%=p.getProduct_Category()%></p></td>
-                <td><p><%=p.getProduct_Discount()%></p></td>
                 <td><p><%=p.getLast_Edited_By()%></p></td>
             </tr>
                 

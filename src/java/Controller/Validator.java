@@ -32,4 +32,10 @@ public class Validator implements Serializable{
             return false;
         }
     }
+
+    public void clear(HttpSession session) {
+        session.setAttribute("Weight_err", null);
+        session.setAttribute("Price_err", null);
+        session.setAttribute("Stock_err", null);
+    }
 }

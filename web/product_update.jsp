@@ -18,7 +18,12 @@
         
         <%
             Product product = (Product) session.getAttribute("product");
-            String updated = (String) session.getAttribute("updated");
+            String outcome = (String) session.getAttribute("outcome");
+            
+            String Weight_err = (String)session.getAttribute("Weight_err");
+            String Price_err = (String)session.getAttribute("Price_err");
+            String Stock_err = (String)session.getAttribute("Stock_err");
+
         %>
         <form action="ProductUpdateServlet" method="post">
             <table>
@@ -56,22 +61,12 @@
                     <td><label for="product_Manufacturer">Product Manufacturer: </td>
                     <td><%=product.getProduct_Manufacturer()%></td>
                     <td><input type="text" id="product_Manufacturer" name="product_Manufacturer" value="<%=product.getProduct_Manufacturer()%>"></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Features">Product Features: </td>
-                    <td><%=product.getProduct_Features()%></td>
-                    <td><input type="text" id="product_Features" name="product_Features" value="<%=product.getProduct_Features()%>"></td>
-                </tr>                
+                </tr>                               
                 <tr>
                     <td><label for="product_Powersource">Product Powersource: </td>
                     <td><%=product.getProduct_Powersource()%></td>
                     <td><input type="text" id="product_Powersource" name="product_Powersource" value="<%=product.getProduct_Powersource()%>"></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Dimensions">Product Dimensions: </td>
-                    <td><%=product.getProduct_Dimensions()%></td>
-                    <td><input type="text" id="product_Dimensions" name="product_Dimensions" value="<%=product.getProduct_Dimensions()%>"></td>
-                </tr>                
+                </tr>                               
                 <tr>
                     <td><label for="product_Weight">Product Weight: </td>
                     <td><%=product.getProduct_Weight()%></td>
@@ -81,12 +76,7 @@
                     <td><label for="product_Warranty">Product Warranty: </td>
                     <td><%=product.getProduct_Warranty()%></td>
                     <td><input type="text" id="product_Warranty" name="product_Warranty" value="<%=product.getProduct_Warranty()%>"></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Image">Product Image: </td>
-                    <td><%=product.getProduct_Image()%></td>
-                    <td><input type="text" id="product_Image" name="product_Image" value="<%=product.getProduct_Image()%>"></td>
-                </tr>                
+                </tr>                               
                 <tr>
                     <td><label for="product_Price">Product Price: </td>
                     <td><%=product.getProduct_Price()%></td>
@@ -101,17 +91,7 @@
                     <td><label for="product_Avail">Product Availability: </td>
                     <td><%=product.isProduct_Avail()%></td>
                     <td><input type="text" id="product_Avail" name="product_Avail" value="<%=product.isProduct_Avail()%>"></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Category">Product Category: </td>
-                    <td><%=product.getProduct_Category()%></td>
-                    <td><input type="text" id="product_Category" name="product_Category" value="<%=product.getProduct_Category()%>"></td>
-                </tr>   
-                <tr>
-                    <td><label for="product_Discount">Product Discount: </td>
-                    <td><%=product.getProduct_Discount()%></td>
-                    <td><input type="text" id="product_Discount" name="product_Discount" value="<%=product.getProduct_Discount()%>"></td>
-                </tr>      
+                </tr>                      
                 <tr>
                     <td><label for="last_Edited_By">Last Edited By: </td>
                     <td><%=product.getLast_Edited_By()%></td>
@@ -120,7 +100,10 @@
             </table>
             <input class="button" type="submit" value="Update"><br>
         </form>
-        <span><%= (updated != null ? updated : "")%></span><br>
+        <span><%= (outcome != null ? outcome : "")%></span><br>
+        <span><%= (Weight_err != null ? Weight_err : "")%></span><br>
+        <span><%= (Price_err != null ? Price_err : "")%></span><br>
+        <span><%= (Stock_err != null ? Stock_err : "")%></span><br>
         
         <p align="left">
         <a class="button" href="product_search.jsp">Product Search</a>

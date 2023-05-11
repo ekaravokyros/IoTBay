@@ -50,22 +50,12 @@
                     <td><label for="product_Manufacturer">Product Manufacturer: </td>
                     <td><%=product.getProduct_Manufacturer()%></td>
                     <td></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Features">Product Features: </td>
-                    <td><%=product.getProduct_Features()%></td>
-                    <td></td>
-                </tr>                
+                </tr>                         
                 <tr>
                     <td><label for="product_Powersource">Product Powersource: </td>
                     <td><%=product.getProduct_Powersource()%></td>
                     <td></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Dimensions">Product Dimensions: </td>
-                    <td><%=product.getProduct_Dimensions()%></td>
-                    <td></td>
-                </tr>                
+                </tr>                          
                 <tr>
                     <td><label for="product_Weight">Product Weight: </td>
                     <td><%=product.getProduct_Weight()%></td>
@@ -75,12 +65,7 @@
                     <td><label for="product_Warranty">Product Warranty: </td>
                     <td><%=product.getProduct_Warranty()%></td>
                     <td></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Image">Product Image: </td>
-                    <td><%=product.getProduct_Image()%></td>
-                    <td></td>
-                </tr>                
+                </tr>                               
                 <tr>
                     <td><label for="product_Price">Product Price: </td>
                     <td><%=product.getProduct_Price()%></td>
@@ -95,17 +80,7 @@
                     <td><label for="product_Avail">Product Availability: </td>
                     <td><%=product.isProduct_Avail()%></td>
                     <td></td>
-                </tr>                
-                <tr>
-                    <td><label for="product_Category">Product Category: </td>
-                    <td><%=product.getProduct_Category()%></td>
-                    <td></td>
-                </tr>   
-                <tr>
-                    <td><label for="product_Discount">Product Discount: </td>
-                    <td><%=product.getProduct_Discount()%></td>
-                    <td></td>
-                </tr>      
+                </tr>                     
                 <tr>
                     <td><label for="last_Edited_By">Last Edited By: </td>
                     <td><%=product.getLast_Edited_By()%></td>
