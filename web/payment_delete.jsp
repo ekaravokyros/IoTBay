@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Delete Payment Detail Record</title>
+        <title>Delete Payment Record</title>
     </head>
     <body>
-        <h1>Delete Payment Detail Record</h1>
+        <h1>Delete Payment Record</h1>
         TBA
     </body>
 </html>
