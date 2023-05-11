@@ -26,10 +26,14 @@
             }
             
             else if (customer != null) {
-                %> 
+                %>
                 <p align="right">You are logged in as ${customer.fname} ${customer.lname} (${customer.email}) <br>
                 <p align="right"><a class="button" href="logout.jsp">Logout</a><br>
-                <p align="left"><a class="button" href="account.jsp">My Account</a><br>
+                <table>
+                    <td><p align="left"><a class="button" href="account.jsp">My Account</a></td>
+                    <td><p align="left"><a class="button" href="payment_details.jsp">Payment Details</a></td>
+                    <td><p align="left"><a class="button" href="payment_history.jsp">Payment History</a></td>
+                </table>
                 <% 
             }
         %>        
