@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>Delete Payment Detail Record</h1>
+        TBA
     </body>
 </html>
