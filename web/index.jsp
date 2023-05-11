@@ -14,7 +14,7 @@
         <title>IoTBay</title>
     </head>
     <body>
-        <h1>Welcome to IoTBay</h1>
+        <h1>Welcome to IoTBay123</h1>
         <h2>The one-stop-shop for all your IoT Device Needs</h2>
         <table>
             <td><a class="button" href="login.jsp">Login</a></td>
