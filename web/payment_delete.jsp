@@ -9,10 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Delete Payment Record</title>
     </head>
     <body>
         <h1>Delete Payment Record</h1>
-        TBA
+        <form>
+            <p>TBA<p/>
+        
+            <input class="button" type="submit" value="Delete">
+        </form>
+        
+        <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>

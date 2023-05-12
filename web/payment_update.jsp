@@ -20,7 +20,7 @@
             <table>
                 <tr>
                     <td><label for="payment_method">Payment Method:</label></td>
-                    <td><select id="payment_method" name="payment_method">
+                    <td><select id="payment_method" name="payment_method" a>
                         <option value="credit_card">Credit Card</option>
                         <option value="debit_card">Debit Card</option>
                     </td>
@@ -43,5 +43,6 @@
             </table>
             <input class="button" type="submit" value="Update">
         </form>
+        <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>
