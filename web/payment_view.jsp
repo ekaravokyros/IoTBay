@@ -13,13 +13,12 @@
         <title>Delete Payment Record</title>
     </head>
     <body>
-        <h1>Delete Payment Record</h1>
+        <h1>View Payment Details</h1>
         <form>
-            <select name="payment_records" id="payment_records">
-                <option value="record_1">Record_1_eg</option>
-            </select><br><br>
-        
-            <input class="button" type="submit" value="Delete">
+            <p>Payment Type: <p/>
+            <p>Card Number: <p/>
+            <p>Expiry Date: <p/>
+            <p>CVV: <p/>
         </form>
         
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
