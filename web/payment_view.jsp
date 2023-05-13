@@ -13,13 +13,20 @@
         <title>Delete Payment Record</title>
     </head>
     <body>
+        <%
+            String payment_method = request.getParameter("paymentMethod");
+            String name_on_card = request.getParameter("name_on_card");
+            String card_number = request.getParameter("card_number");
+            String expiry_date = request.getParameter("expiry_date");
+            String cvv = request.getParameter("cvv");
+        %>
+        
         <h1>View Payment Details</h1>
-        <form>
-            <p>Payment Type: <p/>
-            <p>Card Number: <p/>
-            <p>Expiry Date: <p/>
-            <p>CVV: <p/>
-        </form>
+            <p>Payment Method: </p>
+            <p>Cardholder Name:</p>
+            <p>Card Number: </p>
+            <p>Expiry Date: </p>
+            <p>CVV: </p>
         
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>

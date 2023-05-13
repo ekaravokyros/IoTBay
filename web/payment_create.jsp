@@ -4,10 +4,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <title>Add Payment Details</title>
+        <title>Create Payment</title>
     </head>
     <body>
-        <h1>Add Payment Details</h1>
+        <h1>Create Payment</h1>
+        <h4>Order (id)</h4>
+        <h4>Total Amount $(amount)</h4>
         <form action="payment_details.jsp" method="post">
             <table>
                 <tr>
@@ -16,6 +18,11 @@
                         <option value="credit_card">Credit Card</option>
                         <option value="debit_card">Debit Card</option>
                     </td>
+                </tr>
+                
+                <tr>
+                    <td><label for="name_on_card">Cardholder Name:</label></td>
+                    <td><input type="text" id="name_on_card" name="name_on_card"></td>
                 </tr>
                 
                 <tr>
@@ -33,7 +40,7 @@
                     <td><input type="password" id="cvv" name="cvv"></td>
                 </tr>
             </table>
-            <input class="button" type="submit" value="Add">
+            <input class="button" type="submit" value="Create">
         </form>
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
