@@ -42,14 +42,25 @@ public class ProductUpdateServlet extends HttpServlet {
                 session.setAttribute("ID_err", "Error: ID format incorrect");
                 request.getRequestDispatcher("product_update.jsp").include(request, response);
             } else if (!validator.validateDouble(str_Weight)) {
-                session.setAttribute("Weight_err", "Error: Weight format incorrect");
+                session.setAttribute("Weight_err", "Error: Weight format incorrect (reverted to previous value)");
                 request.getRequestDispatcher("product_update.jsp").include(request, response);
             } else if (!validator.validateDouble(str_Price)) {
-                session.setAttribute("Price_err", "Error: Price format incorrect");
+                session.setAttribute("Price_err", "Error: Price format incorrect (reverted to previous value)");
                 request.getRequestDispatcher("product_update.jsp").include(request, response);                
             } else if (!validator.validateInt(str_Stock)) {
-                session.setAttribute("Stock_err", "Error: Stock format incorrect");
+                session.setAttribute("Stock_err", "Error: Stock format incorrect (reverted to previous value)");
                 request.getRequestDispatcher("product_update.jsp").include(request, response);
+                
+            } else if (!validator.val_greater_zero(str_Weight)) {
+                session.setAttribute("Weight_err", "Error: Weight must be greater than zero (reverted to previous value)");
+                request.getRequestDispatcher("product_update.jsp").include(request, response);    
+            } else if (!validator.val_greater_zero(str_Price)) {
+                session.setAttribute("Price_err", "Error: Price must be greater than zero (reverted to previous value)");
+                request.getRequestDispatcher("product_update.jsp").include(request, response);       
+            } else if (!validator.val_greater_equal_zero(str_Stock)) {
+                session.setAttribute("Stock_err", "Error: Stock must be greater than or equal to zero (reverted to previous value)");
+                request.getRequestDispatcher("product_update.jsp").include(request, response);  
+                
             } else {            
                 int product_ID = Integer.parseInt(request.getParameter("product_ID"));
                 String product_Name = request.getParameter("product_Name");

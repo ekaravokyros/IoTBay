@@ -30,6 +30,7 @@ public class ProductAddServlet extends HttpServlet{
             Validator validator = new Validator();
             validator.clear(session);
             session.setAttribute("outcome", null);
+            session.setAttribute("ID_err", null);
             
             String str_ID = request.getParameter("product_ID");
             String str_Weight = request.getParameter("product_Weight");
@@ -48,6 +49,17 @@ public class ProductAddServlet extends HttpServlet{
             } else if (!validator.validateInt(str_Stock)) {
                 session.setAttribute("Stock_err", "Error: Stock format incorrect");
                 request.getRequestDispatcher("product_addItem.jsp").include(request, response);
+
+            } else if (!validator.val_greater_zero(str_Weight)) {
+                session.setAttribute("Weight_err", "Error: Weight must be greater than zero");
+                request.getRequestDispatcher("product_update.jsp").include(request, response);    
+            } else if (!validator.val_greater_zero(str_Price)) {
+                session.setAttribute("Price_err", "Error: Price must be greater than zero)");
+                request.getRequestDispatcher("product_update.jsp").include(request, response);       
+            } else if (!validator.val_greater_equal_zero(str_Stock)) {
+                session.setAttribute("Stock_err", "Error: Stock must be greater than or equal to zero");
+                request.getRequestDispatcher("product_update.jsp").include(request, response);  
+
             } else {
             //Get new product info from product_addItem.jsp
                 int product_ID = Integer.parseInt(request.getParameter("product_ID"));

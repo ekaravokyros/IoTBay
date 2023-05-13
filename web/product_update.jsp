@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Model.Product"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -55,7 +56,16 @@
                 <tr>
                     <td><label for="product_Type">Product Type: </td> 
                     <td><%=product.getProduct_Type()%></td>
-                    <td><input type="text" id="product_Type" name="product_Type" value="<%=product.getProduct_Type()%>"></td>
+                    <td>
+                        <select id="product_Type" name="product_Type">
+                            <option value=""  disabled <% if (product.getProduct_Type() == null) { %>selected<% } %>>--Please select--</option>
+                            <option value="Camera"<% if ("Camera".equals(product.getProduct_Type())) { %>selected<% } %>>Camera</option>
+                            <option value="Component"<% if ("Component".equals(product.getProduct_Type())) { %>selected<% } %>>Component</option>
+                            <option value="Display"<% if ("Display".equals(product.getProduct_Type())) { %>selected<% } %>>Display</option>
+                            <option value="Sensor"<% if ("Sensor".equals(product.getProduct_Type())) { %>selected<% } %>>Sensor</option>
+                            <option value="Single Board Computer"<% if ("Single Board Computer".equals(product.getProduct_Type())) { %>selected<% } %>>Single Board Computer</option>
+                        </select>   
+                    </td>
                 </tr>                
                 <tr>
                     <td><label for="product_Manufacturer">Product Manufacturer: </td>
@@ -68,7 +78,7 @@
                     <td><input type="text" id="product_Powersource" name="product_Powersource" value="<%=product.getProduct_Powersource()%>"></td>
                 </tr>                               
                 <tr>
-                    <td><label for="product_Weight">Product Weight: </td>
+                    <td><label for="product_Weight">Product Weight (g): </td>
                     <td><%=product.getProduct_Weight()%></td>
                     <td><input type="text" id="product_Weight" name="product_Weight" value="<%=product.getProduct_Weight()%>"></td>
                 </tr>                
@@ -79,7 +89,7 @@
                 </tr>                               
                 <tr>
                     <td><label for="product_Price">Product Price: </td>
-                    <td><%=product.getProduct_Price()%></td>
+                    <td><%=product.getProduct_Price_formatted()%></td> 
                     <td><input type="text" id="product_Price" name="product_Price" value="<%=product.getProduct_Price()%>"></td>
                 </tr>                
                 <tr>
@@ -89,8 +99,10 @@
                 </tr>                
                 <tr>
                     <td><label for="product_Avail">Product Availability: </td>
-                    <td><%=product.isProduct_Avail()%></td>
-                    <td><input type="text" id="product_Avail" name="product_Avail" value="<%=product.isProduct_Avail()%>"></td>
+                    <td><label><input type="checkbox" id="product_Avail_current" name="product_Avail_current" value="true" disabled <%if (product.isProduct_Avail()) { %>checked<% } %>>Yes</label>
+                    <input type="hidden" id="product_Avail_current" name="product_Avail_current" value="false"></td>
+                    <td><label><input type="checkbox" id="product_Avail" name="product_Avail" value="true" <%if (product.isProduct_Avail()) { %>checked<% } %>>Yes</label>
+                    <input type="hidden" id="product_Avail" name="product_Avail" value="false"></td>                   
                 </tr>                      
                 <tr>
                     <td><label for="last_Edited_By">Last Edited By: </td>

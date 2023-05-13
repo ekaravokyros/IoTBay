@@ -32,6 +32,14 @@ public class Validator implements Serializable{
             return false;
         }
     }
+    
+    public static boolean val_greater_zero (String input) {
+        return Double.parseDouble(input) > 0;
+    }
+    
+    public static boolean val_greater_equal_zero (String input) {
+        return Integer.parseInt(input) >= 0;
+    }
 
     public void clear(HttpSession session) {
         session.setAttribute("Weight_err", null);

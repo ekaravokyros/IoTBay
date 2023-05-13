@@ -58,7 +58,7 @@
                 <td></td>
             </tr>                              
             <tr>
-                <td><label for="product_Weight">Product Weight: </td>
+                <td><label for="product_Weight">Product Weight (g): </td>
                 <td><%=product.getProduct_Weight()%></td>
                 <td></td>
             </tr>                
@@ -69,7 +69,7 @@
             </tr>                                
             <tr>
                 <td><label for="product_Price">Product Price: </td>
-                <td><%=product.getProduct_Price()%></td>
+                <td><%=product.getProduct_Price_formatted()%></td>
                 <td></td>
             </tr>                
             <tr>

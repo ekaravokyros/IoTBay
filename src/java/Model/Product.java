@@ -5,7 +5,7 @@
 
 package Model;
 import java.io.Serializable;
-
+import java.text.NumberFormat;
 /**
  *
  * @author nrsmi
@@ -121,6 +121,13 @@ public class Product implements Serializable {
     public double getProduct_Price() {
         return product_Price;
     }
+
+    public String getProduct_Price_formatted() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String formatted_Price = formatter.format(product_Price);
+        return formatted_Price;
+    }
+
 
     public void setProduct_Price(double product_Price) {
         this.product_Price = product_Price;

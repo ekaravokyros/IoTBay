@@ -53,7 +53,7 @@
                 <td><p><%=p.getProduct_Powersource()%></p></td>
                 <td><p><%=p.getProduct_Weight()%></p></td>
                 <td><p><%=p.getProduct_Warranty()%></p></td>
-                <td><p><%=p.getProduct_Price()%></p></td>
+                <td><p><%=p.getProduct_Price_formatted()%></p></td>
                 <td><p><%=p.getProduct_Stock()%></p></td>
                 <td><p><%=p.isProduct_Avail()%></p></td>
                 <td><p><%=p.getLast_Edited_By()%></p></td>

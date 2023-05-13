@@ -20,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     background-color: #8ea2ad;
     border: none;
     border-radius: 10px;
-    width: 80px;
+    width: auto;
 }
 
 .button:hover {background-color: #3e8e41}
@@ -29,4 +29,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+
+.textarea {
+  width: 100%;
+  height: auto;
+  resize: none;
+  overflow: auto;
+  word-wrap: break-word;
 }
