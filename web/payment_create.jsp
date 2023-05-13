@@ -8,8 +8,8 @@
     </head>
     <body>
         <h1>Create Payment</h1>
-        <h4>Order (id)</h4>
-        <h4>Total Amount $(amount)</h4>
+        <h3>Order (id)</h3>
+        <h3>Total Amount $(amount)</h3>
         <form action="payment_details.jsp" method="post">
             <table>
                 <tr>
@@ -17,6 +17,7 @@
                     <td><select id="payment_method" name="payment_method">
                         <option value="credit_card">Credit Card</option>
                         <option value="debit_card">Debit Card</option>
+                        </select>
                     </td>
                 </tr>
                 

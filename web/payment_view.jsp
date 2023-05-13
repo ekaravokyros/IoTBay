@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <title>Delete Payment Record</title>
+        <title>View Payment Record</title>
     </head>
     <body>
         <%
@@ -22,12 +22,16 @@
         %>
         
         <h1>View Payment Details</h1>
+        <h3>Order (id)</h3>
+        <h3>Total Amount $(amount)</h3>
+        <form action="payment_details.jsp" method="post">
             <p>Payment Method: </p>
             <p>Cardholder Name:</p>
             <p>Card Number: </p>
             <p>Expiry Date: </p>
             <p>CVV: </p>
-        
+            <input class="button" type="submit" value="Confirm">
+        </form>
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>

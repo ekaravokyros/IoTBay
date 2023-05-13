@@ -40,8 +40,8 @@
                     <td><input type="password" id="cvv" name="cvv"></td>
                 </tr>
             </table>
-            <input class="button" type="submit" value="Update">
-        </form>
+            
+        <input class="button" type="submit" value="Update"></form>
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>
