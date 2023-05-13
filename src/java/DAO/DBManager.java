@@ -19,15 +19,10 @@ public class DBManager {
     }
 
 //--------------------STARTOF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
-    public void addProduct (int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Powersource, double product_Weight, String product_Warranty, double product_Price, int product_Stock, boolean product_Avail, String last_Edited_By)
+    public void addProduct (String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Powersource, double product_Weight, String product_Warranty, double product_Price, int product_Stock, boolean product_Avail, String last_Edited_By)
             throws SQLException {
-        String query = "INSERT INTO JB.PRODUCTS VALUES ((SELECT COALESCE(MAX(PRODUCT_ID), 0) + 1 FROM JB.PRODUCTS)','"+product_Name+"','"+product_Description+"','"+product_Model+"','"+product_Type+"','"+product_Manufacturer+"','"+product_Powersource+"',"+product_Weight+",'"+product_Warranty+"',"+product_Price+","+product_Stock+","+product_Avail+",'"+last_Edited_By+"')";
+        String query = "INSERT INTO JB.PRODUCTS VALUES ((SELECT COALESCE(MAX(PRODUCT_ID), 0) + 1 FROM JB.PRODUCTS),'"+product_Name+"','"+product_Description+"','"+product_Model+"','"+product_Type+"','"+product_Manufacturer+"','"+product_Powersource+"',"+product_Weight+",'"+product_Warranty+"',"+product_Price+","+product_Stock+","+product_Avail+",'"+last_Edited_By+"')";
         st.executeUpdate(query);    
-        //'"+product_ID+"'
-        //String next_id = "UPDATE IOTBAY.PRODUCTS SET PRODUCT_ID = (SELECT MAX(PRODUCT_ID) FROM PRODUCT_ID) + 1 WHERE PRODUCT_ID = 0";
-        //st.executeUpdate(next_id);    
-        //(SELECT COALESCE(MAX(PRODUCT_ID), 0) + 1 FROM JB.PRODUCTS)
-        //((SELECT MAX(PRODUCT_ID) FROM PRODUCT_ID) + 1  FROM JB.PRODUCTS)
     }
     
     public void updateProduct (int product_ID, String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Powersource, double product_Weight, String product_Warranty, double product_Price, int product_Stock, boolean product_Avail, String last_Edited_By)

@@ -30,17 +30,12 @@ public class ProductAddServlet extends HttpServlet{
             Validator validator = new Validator();
             validator.clear(session);
             session.setAttribute("outcome", null);
-            session.setAttribute("ID_err", null);
             
-            String str_ID = request.getParameter("product_ID");
             String str_Weight = request.getParameter("product_Weight");
             String str_Price = request.getParameter("product_Price");
             String str_Stock = request.getParameter("product_Stock");
             
-            if (!validator.validateInt(str_ID)) {
-                session.setAttribute("ID_err", "Error: ID format incorrect");
-                request.getRequestDispatcher("product_addItem.jsp").include(request, response);
-            } else if (!validator.validateDouble(str_Weight)) {
+            if (!validator.validateDouble(str_Weight)) {
                 session.setAttribute("Weight_err", "Error: Weight format incorrect");
                 request.getRequestDispatcher("product_addItem.jsp").include(request, response);
             } else if (!validator.validateDouble(str_Price)) {
@@ -62,7 +57,7 @@ public class ProductAddServlet extends HttpServlet{
 
             } else {
             //Get new product info from product_addItem.jsp
-                int product_ID = Integer.parseInt(request.getParameter("product_ID"));
+                //int product_ID = Integer.parseInt(request.getParameter("product_ID"));
                 String product_Name = request.getParameter("product_Name");
                 String product_Description = request.getParameter("product_Description");
                 String product_Model = request.getParameter("product_Model");
@@ -79,7 +74,7 @@ public class ProductAddServlet extends HttpServlet{
                 
                 try {
                     if (product_Name != null) {
-                        manager.addProduct(product_ID, product_Name, product_Description, product_Model, product_Type, product_Manufacturer, product_Powersource, product_Weight, product_Warranty, product_Price, product_Stock, product_Avail, last_Edited_By);
+                        manager.addProduct(product_Name, product_Description, product_Model, product_Type, product_Manufacturer, product_Powersource, product_Weight, product_Warranty, product_Price, product_Stock, product_Avail, last_Edited_By);
                         session.setAttribute("outcome", "Product has been added to the Store");
                         request.getRequestDispatcher("product_addItem.jsp").include(request, response);
                         response.sendRedirect("product_addItem.jsp");

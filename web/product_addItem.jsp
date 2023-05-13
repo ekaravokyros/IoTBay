@@ -11,12 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <title>Add Produce</title>
+        <title>Add Product</title>
     </head>
     <body>
         <%
             String outcome = (String)session.getAttribute("outcome");
-            String ID_err = (String)session.getAttribute("ID_err");
             String Name_err = (String)session.getAttribute("Name_err");
             String Descr_err = (String)session.getAttribute("Descr_err");
             String Model_err = (String)session.getAttribute("Model_err");
@@ -32,14 +31,9 @@
             String EditedBy_err = (String)session.getAttribute("EditedBy_err");
         %>
         <h1>Add Product to Store</h1>
-        
+        <span><%= (outcome != null ? outcome : "")%></span><br>
         <form action="ProductAddServlet" method="post">
             <table>
-                <tr>
-                    <td><label for="product_ID">Product ID: </td>
-                    <td><input type="text" id="product_ID" name="product_ID" placeholder="<%=(ID_err != null ? ID_err : "Enter ID")%>"></td>                               
-                </tr>
-                <tr>
                     <td><label for="product_Name">Product Name: </td>
                     <td><input type="text" id="product_Name" name="product_Name" placeholder="<%=(Name_err != null ? Name_err : "Enter Name")%>" ></td>
                 </tr>
@@ -96,12 +90,11 @@
                 </tr>                     
                 <tr>
                     <td><label for="last_Edited_By">Last Edited By: </td>
-                    <td><input type="text" id="last_Edited_By" name="last_Edited_By" placeholder="<%=(EditedBy_err != null ? ID_err : "")%>"></td>
+                    <td><input type="text" id="last_Edited_By" name="last_Edited_By" placeholder="<%=(EditedBy_err != null ? EditedBy_err : "")%>"></td>
                 </tr>      
             </table>
             <input class="button" type="submit" value="Add Product">
         </form>
-        <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>
-        <span><%= (outcome != null ? outcome : "")%></span>
+        <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>    
     </body>
 </html>
