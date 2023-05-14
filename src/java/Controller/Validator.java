@@ -14,7 +14,8 @@ public class Validator implements Serializable{
     
     public Validator() {    
     }
-    
+
+//--------------------START OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
     public static boolean validateInt (String input) {
         try {
             Integer.parseInt(input);
@@ -50,4 +51,6 @@ public class Validator implements Serializable{
         session.setAttribute("Price_err", null);
         session.setAttribute("Stock_err", null);
     }
+//--------------------END OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
+    
 }

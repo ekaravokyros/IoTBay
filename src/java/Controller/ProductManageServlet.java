@@ -18,7 +18,7 @@ import DAO.*;
 
 /**
  *
- * @author nrsmi
+ * @author NICHOLAS SMITH 11378054
  */
 
 public class ProductManageServlet extends HttpServlet {

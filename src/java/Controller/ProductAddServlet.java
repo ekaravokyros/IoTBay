@@ -18,8 +18,9 @@ import DAO.*;
 
 /**
  *
- * @author nrsmi
+ * @author NICHOLAS SMITH 11378054
  */
+
 public class ProductAddServlet extends HttpServlet{
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -19,7 +19,7 @@ import Model.Product;
 
 /**
  *
- * @author nrsmi
+ * @author NICHOLAS SMITH 11378054
  */
 
 public class ProductUpdateServlet extends HttpServlet {

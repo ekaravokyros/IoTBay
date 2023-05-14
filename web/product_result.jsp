@@ -1,7 +1,7 @@
 <%-- 
     Document   : product_delconfirm
     Created on : 10/05/2023, 12:41:11 PM
-    Author     : nrsmi
+    Author     : NICHOLAS SMITH 11378054
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
