@@ -12,6 +12,10 @@
         <form action="payment_details.jsp" method="post">
             <table>
                 <tr>
+                    <td><h3>Payment Information:</h3></td>
+                <tr>
+                
+                <tr>
                     <td><label for="payment_method">Payment Method:</label></td>
                     <td><select id="payment_method" name="payment_method">
                         <option value="credit_card">Credit Card</option>
