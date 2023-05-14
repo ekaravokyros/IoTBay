@@ -16,7 +16,7 @@
             String date_paid = request.getParameter("date_paid");
         %>
         
-        <h1>Create Payment Details</h1>
+        <h1>Payment Details</h1>
         <h3>Order <span style="font-weight: normal;">(ID)</span></h3>
         <h3>Total Amount $<span style="font-weight: normal;">(ORDER_AMOUNT)</span></h3>
 
