@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Payment History</h1>
-        <h3>Search Payment Details by Payment ID and Date Paid</h3>
+        <h3>Search Payment Details by Payment ID and/or Date Paid</h3>
         
         <form>
             <table>
