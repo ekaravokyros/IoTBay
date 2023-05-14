@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <title>View Payment Record</title>
+        <title>Confirm Payment Details</title>
     </head>
     <body>
         <%
@@ -21,17 +21,21 @@
             String cvv = request.getParameter("cvv");
         %>
         
-        <h1>View Payment Details</h1>
+        <h1>Confirm Payment Information</h1>
         <h3>Order (id)</h3>
         <h3>Total Amount $(amount)</h3>
+        <br>
+        
         <form action="payment_details.jsp" method="post">
             <p>Payment Method: </p>
             <p>Cardholder Name:</p>
             <p>Card Number: </p>
             <p>Expiry Date: </p>
             <p>CVV: </p>
+            <p>Date Paid: </p>
+            
             <input class="button" type="submit" value="Confirm">
+            <a class="button" href="payment_create.jsp">Back</a>
         </form>
-        <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>
