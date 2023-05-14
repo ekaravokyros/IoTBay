@@ -15,7 +15,7 @@
     </head>
     <body>
         <%
-            String outcome = (String)session.getAttribute("outcome");
+            String confirm_msg = (String)session.getAttribute("confirm_msg");
             String Name_err = (String)session.getAttribute("Name_err");
             String Descr_err = (String)session.getAttribute("Descr_err");
             String Model_err = (String)session.getAttribute("Model_err");
@@ -31,7 +31,7 @@
             String EditedBy_err = (String)session.getAttribute("EditedBy_err");
         %>
         <h1>Add Product to Store</h1>
-        <span><%= (outcome != null ? outcome : "")%></span><br>
+        <span><%= (confirm_msg != null ? confirm_msg : "")%></span><br>
         <form action="ProductAddServlet" method="post">
             <table>
                     <td><label for="product_Name">Product Name: </td>
@@ -95,6 +95,9 @@
             </table>
             <input class="button" type="submit" value="Add Product">
         </form>
-        <p align="left"><a class="button" href="product_manage.jsp">Product Management</a></p>    
+        <form action="ProductManageServlet" method="post">
+            <input type="hidden" name="action" value="Product Management">
+            <p align="left"><button class="button" type="submit">Product Management</button></p>
+        </form>
     </body>
 </html>

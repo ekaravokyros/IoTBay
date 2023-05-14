@@ -29,13 +29,17 @@ public class ProductAddServlet extends HttpServlet{
             
             Validator validator = new Validator();
             validator.clear(session);
-            session.setAttribute("outcome", null);
+            session.setAttribute("confirm_msg", null);
             
             String str_Weight = request.getParameter("product_Weight");
             String str_Price = request.getParameter("product_Price");
             String str_Stock = request.getParameter("product_Stock");
-            
-            if (!validator.validateDouble(str_Weight)) {
+            String product_Name = request.getParameter("product_Name");
+            //Validation of input parameters name, weight, price and stock
+            if (validator.val_isStringEmpty(product_Name)) {
+                session.setAttribute("Name_err", "Error: Cannot be blank");
+                request.getRequestDispatcher("product_addItem.jsp").include(request, response);
+            } else if (!validator.validateDouble(str_Weight)) {
                 session.setAttribute("Weight_err", "Error: Weight format incorrect");
                 request.getRequestDispatcher("product_addItem.jsp").include(request, response);
             } else if (!validator.validateDouble(str_Price)) {
@@ -57,8 +61,6 @@ public class ProductAddServlet extends HttpServlet{
 
             } else {
             //Get new product info from product_addItem.jsp
-                //int product_ID = Integer.parseInt(request.getParameter("product_ID"));
-                String product_Name = request.getParameter("product_Name");
                 String product_Description = request.getParameter("product_Description");
                 String product_Model = request.getParameter("product_Model");
                 String product_Type = request.getParameter("product_Type");
@@ -73,13 +75,15 @@ public class ProductAddServlet extends HttpServlet{
 
                 
                 try {
-                    if (product_Name != null) {
+                    //Check if name already exists in database. If it doesn't, add product otherwise return error message
+                    Boolean check = manager.checkProduct_Name(product_Name);
+                    if (!check ) {
                         manager.addProduct(product_Name, product_Description, product_Model, product_Type, product_Manufacturer, product_Powersource, product_Weight, product_Warranty, product_Price, product_Stock, product_Avail, last_Edited_By);
-                        session.setAttribute("outcome", "Product has been added to the Store");
+                        session.setAttribute("confirm_msg", "Product has been added to the Store");
                         request.getRequestDispatcher("product_addItem.jsp").include(request, response);
-                        response.sendRedirect("product_addItem.jsp");
+                        response.sendRedirect("product_result.jsp");
                     } else {
-                        session.setAttribute("outcome", "Product has NOT been added to the Store");
+                        session.setAttribute("confirm_msg", "Error! Product Name already exists, it has NOT been added to the Store");
                         request.getRequestDispatcher("product_addItem.jsp").include(request, response);
                         response.sendRedirect("product_addItem.jsp");
                     }

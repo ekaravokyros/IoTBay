@@ -30,6 +30,11 @@
         <servlet-class>Controller.ProductDeleteServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>ProductManageServlet</servlet-name>
+        <servlet-class>Controller.ProductManageServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -53,6 +58,10 @@
     <servlet-mapping>
         <servlet-name>ProductDeleteServlet</servlet-name>
         <url-pattern>/ProductDeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductManageServlet</servlet-name>
+        <url-pattern>/ProductManageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

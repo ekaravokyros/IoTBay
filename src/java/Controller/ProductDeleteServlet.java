@@ -28,6 +28,7 @@ public class ProductDeleteServlet extends HttpServlet {
                 throws ServletException, IOException {
             HttpSession session = request.getSession();
             DBManager manager = (DBManager) session.getAttribute("manager");
+            session.setAttribute("confirm_msg", null);
             
             int product_ID = Integer.parseInt(request.getParameter("product_ID"));
             System.out.println(product_ID);
@@ -37,18 +38,18 @@ public class ProductDeleteServlet extends HttpServlet {
                 
                 if (check) {
                     manager.deleteProduct(product_ID);                        
-                    session.setAttribute("msg_delete", "Product has been deleted");                    
-                    request.getRequestDispatcher("product_delete.jsp").include(request, response);
+                    session.setAttribute("confirm_msg", "Product has been deleted");                    
+                    request.getRequestDispatcher("product_result.jsp").include(request, response);
                     
                 } else {  
-                    session.setAttribute("msg_delete", "Product has NOT been deleted");                   
+                    session.setAttribute("confirm_msg", "Product has NOT been deleted");                   
                     request.getRequestDispatcher("product_delete.jsp").include(request, response);
                             
                 }
             } catch (SQLException ex){
                 Logger.getLogger(ProductDeleteServlet.class.getName()).log(Level.SEVERE, null, ex); 
             }
-        response.sendRedirect("product_delconfirm.jsp");    
+        response.sendRedirect("product_result.jsp");    
         }
 }
 

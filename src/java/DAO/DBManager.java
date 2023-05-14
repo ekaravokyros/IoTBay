@@ -32,9 +32,7 @@ public class DBManager {
     
     public void deleteProduct(int product_ID)
             throws SQLException {
-        //prepare statement
         st.executeUpdate("DELETE FROM JB.PRODUCTS WHERE PRODUCT_ID = "+product_ID);
-        //st.executeUpdate("DELETE FROM JB.PRODUCTS WHERE PRODUCT_ID = CAST("+product_ID+" AS CHAR");
     } 
     
     public ArrayList<Product> showProducts() 

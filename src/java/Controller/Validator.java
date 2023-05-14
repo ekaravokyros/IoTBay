@@ -40,8 +40,12 @@ public class Validator implements Serializable{
     public static boolean val_greater_equal_zero (String input) {
         return Integer.parseInt(input) >= 0;
     }
-
+    
+    public static boolean val_isStringEmpty(String input) {
+        return input.trim().isEmpty();
+    }
     public void clear(HttpSession session) {
+        session.setAttribute("Name_err", null);
         session.setAttribute("Weight_err", null);
         session.setAttribute("Price_err", null);
         session.setAttribute("Stock_err", null);

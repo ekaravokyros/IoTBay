@@ -78,8 +78,8 @@ public class ProductUpdateServlet extends HttpServlet {
 
                 session.setAttribute("product", null);
                 try {
-                    Boolean check = manager.checkProduct_ID(product_ID);
-                    if (check) {
+                    Boolean check_ID = manager.checkProduct_ID(product_ID);
+                    if (check_ID) {
                         manager.updateProduct(product_ID, product_Name, product_Description, product_Model, product_Type, product_Manufacturer, product_Powersource, product_Weight, product_Warranty, product_Price, product_Stock, product_Avail, last_Edited_By);
 
                         Product product = manager.getProduct(product_Name);
