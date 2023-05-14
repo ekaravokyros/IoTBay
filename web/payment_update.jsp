@@ -7,10 +7,14 @@
         <title>Update Payment Details</title>
     </head>
     <body>
-        <h1>Update Payment Details</h1>
+        <h1>Update Payment Information</h1>
         
         <form action="payment_details.jsp" method="post">
             <table>
+                <tr>
+                    <td><h3>Payment Information:</h3></td>
+                <tr>
+                
                 <tr>
                     <td><label for="payment_method">Payment Method:</label></td>
                     <td><select id="payment_method" name="payment_method">
@@ -22,22 +26,22 @@
                 
                 <tr>
                     <td><label for="name_on_card">Cardholder Name:</label></td>
-                    <td><input type="text" id="name_on_card" name="name_on_card"></td>
+                    <td><input type="text" id="name_on_card" name="name_on_card" required></td>
                 </tr>
                 
                 <tr>
                     <td><label for="card_number">Card Number:</label></td>
-                    <td><input type="text" id="card_number" name="card_number"></td>
+                    <td><input type="text" id="card_number" name="card_number" required></td>
                 </tr>
                 
                 <tr>
                     <td><label for="expiry_date">Expiry Date:</label></td>
-                    <td><input type="month" id="expiry_date" name="expiry_date"></td>
+                    <td><input type="month" id="expiry_date" name="expiry_date" required></td>
                 </tr>
                 
                 <tr>
                     <td><label for="cvv">CVV:</label></td>
-                    <td><input type="password" id="cvv" name="cvv"></td>
+                    <td><input type="password" id="cvv" name="cvv" required></td>
                 </tr>
             </table>
             
