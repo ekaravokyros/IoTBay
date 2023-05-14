@@ -20,7 +20,7 @@
         <%
             Product product = (Product) session.getAttribute("product");
             String outcome = (String) session.getAttribute("outcome");
-            
+            String Name_err = (String)session.getAttribute("Name_err");
             String Weight_err = (String)session.getAttribute("Weight_err");
             String Price_err = (String)session.getAttribute("Price_err");
             String Stock_err = (String)session.getAttribute("Stock_err");
@@ -113,6 +113,7 @@
             <input class="button" type="submit" value="Update"><br>
         </form>
         <span><%= (outcome != null ? outcome : "")%></span><br>
+        <span><%= (Name_err != null ? Name_err : "")%></span><br>
         <span><%= (Weight_err != null ? Weight_err : "")%></span><br>
         <span><%= (Price_err != null ? Price_err : "")%></span><br>
         <span><%= (Stock_err != null ? Stock_err : "")%></span><br>

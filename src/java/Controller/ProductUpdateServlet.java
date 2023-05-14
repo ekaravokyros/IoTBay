@@ -37,9 +37,10 @@ public class ProductUpdateServlet extends HttpServlet {
             String str_Weight = request.getParameter("product_Weight");
             String str_Price = request.getParameter("product_Price");
             String str_Stock = request.getParameter("product_Stock");
+            String product_Name = request.getParameter("product_Name");
             
-            if (!validator.validateInt(str_ID)) {
-                session.setAttribute("ID_err", "Error: ID format incorrect");
+            if (validator.val_isStringEmpty(product_Name)) {
+                session.setAttribute("Name_err", "Error: Name cannot be blank");
                 request.getRequestDispatcher("product_update.jsp").include(request, response);
             } else if (!validator.validateDouble(str_Weight)) {
                 session.setAttribute("Weight_err", "Error: Weight format incorrect (reverted to previous value)");
@@ -63,7 +64,6 @@ public class ProductUpdateServlet extends HttpServlet {
                 
             } else {            
                 int product_ID = Integer.parseInt(request.getParameter("product_ID"));
-                String product_Name = request.getParameter("product_Name");
                 String product_Description = request.getParameter("product_Description");
                 String product_Model = request.getParameter("product_Model");
                 String product_Type = request.getParameter("product_Type");
