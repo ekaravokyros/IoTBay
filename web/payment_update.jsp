@@ -28,12 +28,14 @@
                 
                 <tr>
                     <td><label for="payment_method">Payment Method:</label></td>
-                    <td><select id="payment_method" name="payment_method" value="${payment.payment_method}">
-                            <option value="credit_card">Credit Card</option>
-                            <option value="debit_card" >Debit Card</option>
+                    <td>
+                        <select id="payment_method" name="payment_method">
+                            <option value="credit_card" <% if (payment.getPayment_method().equals("Credit Card")) { %>selected<% } %>>Credit Card</option>
+                            <option value="debit_card" <% if (payment.getPayment_method().equals("Debit Card")) { %>selected<% } %>>Debit Card</option>
                         </select>
                     </td>
                 </tr>
+
                 
                 <tr>
                     <td><label for="name_on_card">Cardholder Name:</label></td>
@@ -42,7 +44,7 @@
                 
                 <tr>
                     <td><label for="card_number">Card Number:</label></td>
-                    <td><input type="text" id="card_number" name="card_number" value="${payment.card_number}"required></td>
+                    <td><input type="text" id="card_number" name="card_number" value="${payment.card_number}" required></td>
                 </tr>
                 
                 <tr>
@@ -57,6 +59,7 @@
             </table>
             
             <input class="button" type="submit" value="Update">
+            
         </form>
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>

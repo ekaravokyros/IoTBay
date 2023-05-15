@@ -16,20 +16,27 @@
         <h1>Payment History</h1>
         <h3>Search Payment Details by Payment ID and/or Date Paid</h3>
         
-        <form>
-            <table>
-                <tr>
-                    <td><label for="filter">Payment ID:</label></td>
-                    <td><input type="text" id="paymentID_filter" name="paymentID_filter"></td>
-                </tr>
+        <table>
+            <tr>
+                <td><label for="filter">Payment ID:</label></td>
+                <td><input type="text" id="paymentID_filter" name="paymentID_filter"></td>
+            </tr>
 
-                <td><label for="filter">Date:</label></td>
-                <td><input type="date" id="date_filter" name="date_filter"></td>
-            </table>
-            
-            <input class="button" type="submit" value="Search">
-        </form>
-            
+            <td><label for="filter">Date Paid:</label></td>
+            <td><input type="date" id="date_filter" name="date_filter"></td>
+        </table>
+
+        <input class="button" type="submit" value="Search">
+        
+        <h3>Search Results:</h3>
+        <p>Payment ID: </p>
+        <p>Order ID:</p>
+        <p>Payment Method:</p>
+        <p>Cardholder Name:</p>
+        <p>Expiry Date:</p>
+        <p>CVV:</p>
+        <p>Date Paid: </p>
+
         <p align="right"><a class="button" href="main.jsp">Back</a></p>
     </body>
 </html>

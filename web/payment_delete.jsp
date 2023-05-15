@@ -16,8 +16,9 @@
         <h1>Delete Payment Record</h1>
         <form>
             <select name="payment_records" id="payment_records">
-                <option value="record_1">PaymentID1_eg</option>
-                <option value="record_1">PaymentID2_eg</option>
+                <option value="record_1">PaymentID1_EXAMPLE</option>
+                <option value="record_2">PaymentID2_EXAMPLE</option>
+                <option value="record_3">PaymentID3_EXAMPLE</option>
             </select><br><br>
         
             <input class="button" type="submit" value="Delete">
