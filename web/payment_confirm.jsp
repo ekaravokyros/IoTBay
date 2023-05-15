@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Model.Payment"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,6 +66,11 @@
             
             <input class="button" type="submit" value="Confirm">
             <p><a class="button" href="payment_create.jsp">Edit</a><p>
+                
+            <% 
+                Payment payment = new Payment(payment_method, name_on_card, card_number, expiry_date, cvv, date_paid); 
+                session.setAttribute("payment", payment);
+            %>
         </form>
     </body>
 </html>
