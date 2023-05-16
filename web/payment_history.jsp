@@ -21,6 +21,7 @@
             String orderID = "";
             String paymentMethod = "";
             String cardholderName = "";
+            String cardNumber = "";
             String expiryDate = "";
             String cvv = "";
             String datePaid = "";
@@ -30,21 +31,24 @@
                     orderID = "1001";
                     paymentMethod = "Credit Card";
                     cardholderName = "John Doe";
-                    expiryDate = "2023-12-31";
+                    cardNumber = "7579 8302 8984 2898";
+                    expiryDate = "2025-12";
                     cvv = "123";
                     datePaid = "2023-05-01";
                 } else if (paymentID.equals("2")) {
                     orderID = "1002";
                     paymentMethod = "Debit Card";
                     cardholderName = "Jane Smith";
-                    expiryDate = "2024-06-30";
+                    cardNumber = "6496 3783 7259 9010";
+                    expiryDate = "2024-06";
                     cvv = "456";
                     datePaid = "2023-05-02";
                 } else if (paymentID.equals("3")) {
                     orderID = "1003";
                     paymentMethod = "Credit Card";
                     cardholderName = "David Johnson";
-                    expiryDate = "2022-09-30";
+                    cardNumber = "7576 1188 4332 5652";
+                    expiryDate = "2024-09";
                     cvv = "789";
                     datePaid = "2023-05-03";
                 }
@@ -74,6 +78,7 @@
             <p><b>Order ID:</b> <%= orderID %></p>
             <p><b>Payment Method:</b> <%= paymentMethod %></p>
             <p><b>Cardholder Name:</b> <%= cardholderName %></p>
+            <p><b>Card Number:</b> <%= cardNumber %></p>
             <p><b>Expiry Date:</b> <%= expiryDate %></p>
             <p><b>CVV:</b> <%= cvv %></p>
             <p><b>Date Paid:</b> <%= datePaid %></p>
