@@ -50,7 +50,7 @@
                     <td><input type="integer" id="pcode" name="pcode"></td>
                 </tr>
                 <tr>
-                    <td><label for="pnumber">Phone Numbers</label></td>
+                    <td><label for="pnumber">Phone Number</label></td>
                     <td><input type="integer" id="pnumber" name="pnumber"></td>
                 </tr>
                 <tr>

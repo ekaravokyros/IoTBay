@@ -32,6 +32,7 @@
                 <table>
                     <td><p align="left"><a class="button" href="account.jsp">My Account</a></td>
                     <td><p align="left"><a class="button" href="payment_details.jsp">Payment Details</a></td>
+                    <td><p align="left"><a class="button" href="order_management.jsp">Order Management</a></td>
                     <td><p align="left"><a class="button" href="payment_history.jsp">Payment History</a></td>
                 </table>
                 <% 

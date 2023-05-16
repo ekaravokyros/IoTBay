@@ -50,6 +50,7 @@ public class Validator implements Serializable{
         session.setAttribute("Weight_err", null);
         session.setAttribute("Price_err", null);
         session.setAttribute("Stock_err", null);
+//        session.setAttribute("OrderID_error", null);
     }
 //--------------------END OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
     
