@@ -46,7 +46,7 @@ public class DBManager {
             String product_Description = rs.getString(3);
             String product_Model = rs.getString(4);
             String product_Type = rs.getString(5); 
-            String product_Manufacturer = rs.getString(6);;
+            String product_Manufacturer = rs.getString(6);
             String product_Powersource = rs.getString(7);
             double product_Weight = rs.getDouble(8);
             String product_Warranty = rs.getString(9);
