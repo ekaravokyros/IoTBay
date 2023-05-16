@@ -36,8 +36,8 @@
                     <td><label for="payment_method">Payment Method:</label></td>
                     <td>
                         <select id="payment_method" name="payment_method">
-                            <option value="credit_card" <% if (payment.getPayment_method().equalsIgnoreCase("credit_card")) { %>selected<% } %>>Credit Card</option>
-                            <option value="debit_card" <% if (payment.getPayment_method().equalsIgnoreCase("debit_card")) { %>selected<% } %>>Debit Card</option>
+                            <option value="Credit Card" <% if (payment.getPayment_method().equalsIgnoreCase("Credit Card")) { %>selected<% } %>>Credit Card</option>
+                            <option value="Debit Card" <% if (payment.getPayment_method().equalsIgnoreCase("Debit Card")) { %>selected<% } %>>Debit Card</option>
                         </select>
                     </td>
                 </tr>
