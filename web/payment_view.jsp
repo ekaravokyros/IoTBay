@@ -15,7 +15,11 @@
     </head>
     <body>
         <% 
-            Payment payment = (Payment)session.getAttribute("payment"); 
+            Payment payment = (Payment)session.getAttribute("payment");
+            if (payment == null) {
+                payment = new Payment("", "", "", "", "", "");
+                session.setAttribute("payment", payment);
+            }
         %>
         
         <h1>View Payment Details</h1>
