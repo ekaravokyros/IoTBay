@@ -26,7 +26,7 @@
             else {
                 %><h1>Welcome Back!</h1>
                 <table>
-                    <td><a class="button" href="viewUser.jsp">Manage Users</a></td>
+                    <td><a class="button" href="user_manage.jsp">Manage Users</a></td>
                     <td><a class="button" href="adminlogin.jsp">Back</a></td> 
               </table><%
             }
