@@ -65,7 +65,7 @@
             </table>
             
             <input class="button" type="submit" value="Confirm">
-            <a class="button" href="payment_create.jsp">Edit</a><p>
+            <a class="button" href="payment_create.jsp">Back</a><p>
                 
             <% 
                 Payment payment = new Payment(payment_method, name_on_card, card_number, expiry_date, cvv, date_paid); 

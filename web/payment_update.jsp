@@ -10,6 +10,10 @@
     <body>
         <%
             Payment payment = (Payment)session.getAttribute("payment"); 
+            if (payment == null) {
+                payment = new Payment("", "", "", "", "", "");
+                session.setAttribute("payment", payment);
+            }
             String paymentUpdated = request.getParameter("paymentUpdated");
             if (paymentUpdated != null) {
                 String payment_method = request.getParameter("payment_method");
