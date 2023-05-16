@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Admin Sign In</title>
     </head>
     <body>
@@ -26,6 +27,7 @@
                 </tr>
             </table>
              <input class="button" type="submit" value="Sign In">
+             <a class="button" href="index.jsp">Back</a>
         </form>
     </body>
 </html>
