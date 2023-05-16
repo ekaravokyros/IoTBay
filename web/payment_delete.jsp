@@ -14,12 +14,12 @@
     </head>
     <body>
         <h1>Delete Payment Record</h1>
-        <form>
+        <form action="PaymentDeleteServlet" method="post">
             <select name="payment_records" id="payment_records">
-                <option value="record_1">PaymentID1_EXAMPLE</option>
-                <option value="record_2">PaymentID2_EXAMPLE</option>
-                <option value="record_3">PaymentID3_EXAMPLE</option>
-            </select><br><br>
+                <option value="PaymentID1">PaymentID1</option>
+                <option value="PaymentID2">PaymentID2</option>
+                <option value="PaymentID3">PaymentID3</option>
+            </select>
         
             <input class="button" type="submit" value="Delete">
         </form>

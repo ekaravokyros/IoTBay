@@ -6,6 +6,11 @@
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet>
+        <servlet-name>PaymentDeleteServlet</servlet-name>
+        <servlet-class>Controller.PaymentDeleteServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
         <servlet-name>ProductsShowServlet</servlet-name>
         <servlet-class>Controller.ProductsShowServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
