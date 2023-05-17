@@ -35,16 +35,16 @@
         <servlet-class>Controller.ProductManageServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
-<!--    <servlet>
-        <servlet-name>SearchServletServlet</servlet-name>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
         <servlet-class>Controller.SearchServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
-    </servlet>-->
-<!--    <servlet>
+    </servlet>
+    <servlet>
         <servlet-name>order_managementServlet</servlet-name>
         <servlet-class>Controller.order_managementServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
-    </servlet>-->
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -73,14 +73,14 @@
         <servlet-name>ProductManageServlet</servlet-name>
         <url-pattern>/ProductManageServlet</url-pattern>
     </servlet-mapping>
-<!--    <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/SearchServlet</url-pattern>
-    </servlet-mapping>-->
-<!--    <servlet-mapping>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>order_managementServlet</servlet-name>
         <url-pattern>/order_managementServlet</url-pattern>
-    </servlet-mapping>    -->
+    </servlet-mapping>
     <session-config>
         <session-timeout>
            30
