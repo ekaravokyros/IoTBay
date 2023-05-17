@@ -17,7 +17,7 @@ public class DBManager {
     public DBManager(Connection conn) throws SQLException {       
        st = conn.createStatement();   
     }
-
+    
 //--------------------START OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
     public void addProduct (String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Powersource, double product_Weight, String product_Warranty, double product_Price, int product_Stock, boolean product_Avail, String last_Edited_By)
             throws SQLException {
@@ -113,4 +113,78 @@ public class DBManager {
     }
 
 //--------------------END OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
+    
+//--------------------START OF CODE AUTHORED BY EVELYN KARAVOKYROS 14244608 --------------------
+
+    //Finding customer via the email & password provided in the database
+    
+    public Customer findCustomer(String email, String password) throws SQLException {   
+        
+        //Setting up select sql query string 
+        String fetch = "select * from JB.CUSTOMER where CUSTOMER_EMAIL = '" + email + "' and CUSTOMER_PASSWORD = '" + password + "'"; 
+        
+        //Execute query using statement field and add results to a ResultSet
+        ResultSet rs = st.executeQuery(fetch);
+        
+        //Search ResultSet for customer using following parameters
+        while (rs.next()){
+           String CUSTOMER_EMAIL = rs.getString(3);
+           String CUSTOMER_PASSWORD = rs.getString(4);
+           if (CUSTOMER_EMAIL.equals(email) && CUSTOMER_PASSWORD.equals(password)){
+               String CUSTOMER_FIRSTNAME = rs.getString(1);
+               String CUSTOMER_LASTNAME = rs.getString(2);
+               String CUSTOMER_NUMBER = rs.getString(5);
+               return new Customer (CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, CUSTOMER_EMAIL, CUSTOMER_PASSWORD, CUSTOMER_NUMBER);
+           }
+        }              
+        return null;   
+    }
+        
+        //Add a customer details into  database   
+        public void addCustomer(String firstname, String lastname, String email, String password) throws SQLException {  
+            st.executeUpdate("INSERT INTO JB.CUSTOMER " + "VALUES ('" + firstname + "', '" + lastname + "', '" + email +  "', '" + password +"')" );   
+        }
+        
+        //Update customer details in  database   
+        public void updateCustomer(String firstname, String lastname, String email, String password) throws SQLException {       
+            st.executeUpdate("UPDATE JB.CUSTOMER SET CUSTOMER_FIRSTNAME='"+ firstname + "', CUSTOMER_LASTNAME='" + lastname + "', CUSTOMER_EMAIL='" + email + "', CUSTOMER_PASSWORD='" + password +  "'" );
+        }     
+        
+        //Delete customer from  database   
+        public void deleteCustomer(String email) throws SQLException{       
+            st.executeUpdate("DELETE FROM JB.CUSTOMER WHERE CUSTOMER_EMAIL ='" + email + "'");
+        }
+        
+        //Checking if customer exists
+        public boolean checkCustomer(String email, String password) throws SQLException {
+            String fetch = "SELECT * FROM JB.CUSTOMER where CUSTOMER_EMAIL ='" + email + "'AND CUSTOMER_PASSWORD='" + password + "'";
+            ResultSet rs = st.executeQuery(fetch);
+
+            while (rs.next()) {
+               String CUSTOMER_EMAIL = rs.getString(3);
+               String CUSTOMER_PASSWORD = rs.getString(4);
+               if (CUSTOMER_EMAIL.equals(email) && CUSTOMER_PASSWORD.equals(password)){
+                   return true;
+               }
+            }
+            return false;
+        }
+           
+        public ArrayList<Customer> fetchCustomers() throws SQLException {
+        String fetch = "SELECT *  FROM JB.CUSTOMER";
+        ResultSet rs = st.executeQuery(fetch);
+        ArrayList<Customer>  temp = new ArrayList();
+        
+        while (rs.next()) {
+            String CUSTOMER_FIRSTNAME = rs.getString(1);
+            String CUSTOMER_LASTNAME = rs.getString(2);
+            String CUSTOMER_EMAIL = rs.getString(3);
+            String CUSTOMER_PASSWORD = rs.getString(4);
+            String CUSTOMER_NUMBER = rs.getString(5);
+            temp.add(new Customer (CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, CUSTOMER_EMAIL, CUSTOMER_PASSWORD, CUSTOMER_NUMBER));
+        }
+        return temp;
+    }
+    
+    
 }

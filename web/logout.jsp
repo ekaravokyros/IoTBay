@@ -16,6 +16,7 @@
     </head>
     <body>
         <p1>You have been logged out.</p1>
+         <form action="LogoutServlet" method="post">
         <p><a class="button" href="index.jsp">Home</a></p>
         <% session.invalidate(); %>
     </body>

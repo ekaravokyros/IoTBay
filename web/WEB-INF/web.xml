@@ -35,6 +35,16 @@
         <servlet-class>Controller.ProductManageServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>LoginCustomerServlet</servlet-name>
+        <servlet-class>Controller.LoginCustomerServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>Controller.LogoutServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
 <!--    <servlet>
         <servlet-name>SearchServletServlet</servlet-name>
         <servlet-class>Controller.SearchServlet</servlet-class>
@@ -73,6 +83,14 @@
         <servlet-name>ProductManageServlet</servlet-name>
         <url-pattern>/ProductManageServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginCustomerServlet</servlet-name>
+        <url-pattern>/LoginCustomerServlet</url-pattern>
+    </servlet-mapping>
+      <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
 <!--    <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/SearchServlet</url-pattern>
@@ -86,4 +104,5 @@
            30
        </session-timeout>
     </session-config>
+    
 </web-app>

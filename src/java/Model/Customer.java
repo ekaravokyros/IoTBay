@@ -14,7 +14,7 @@ import java.util.List;
  * @author nrsmi
  */
 
-public class Customer extends User implements Serializable {
+public class Customer implements Serializable {
     private String email;
     private String password;
     private String fname;
@@ -23,46 +23,34 @@ public class Customer extends User implements Serializable {
     private String city;
     private String state;
     private String pcode;
-    private String pnumber;
+    private String number;
 
     public Customer(){
         
     }
     
-    public Customer(String email, String password, String fname, String lname, String address, String city, String state, String pcode, String pnumber) {
+    public Customer(String fname, String lname, String email, String password, String number) {
         this.email = email;
         this.password = password;
         this.fname = fname;
         this.lname = lname;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.pcode = pcode;
-        this.pnumber = pnumber;
-        customers_list.add(Arrays.asList(email, password, fname, lname, address, city, state, pcode, pnumber));
-    }
+//        this.address = address;
+//        this.city = city;
+//        this.state = state;
+//        this.pcode = pcode;
+        this.number = number;
+        }
     
    public Customer(String email, String password) {
         this.email = email;
         this.password = password;
     }
     
-    public void addCustomer (List<String> customer){
-        customers_list.add(customer);
-    }
+//    public void addCustomer (List<String> customer){
+//        customers_list.add(customer);
+//    }
+//    
     
-    public List<String> searchUserbyeamil(String email) {
-        for(List<String> customer: customers_list){
-            if(customers_list.get(0).get(0).equals(email)){
-                return customer;
-            }
-        }
-        return null; //Customer account not found
-    }
-    
-    public List<List<String>> getCustomers() {
-        return customers_list;
-    }
 
     public String getEmail() {
         return email;
@@ -128,12 +116,12 @@ public class Customer extends User implements Serializable {
         this.pcode = pcode;
     }
 
-    public String getPnumber() {
-        return pnumber;
+    public String getnumber() {
+        return number;
     }
 
-    public void setPnumber(String pnumber) {
-        this.pnumber = pnumber;
+    public void setnumber(String pnumber) {
+        this.number = pnumber;
     }
     
     
