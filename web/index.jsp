@@ -20,6 +20,7 @@
             <td><a class="button" href="login.jsp">Login</a></td>
             <td><a class="button" href="register.jsp">Register</a></td>
             <td><a class="button" href="store.jsp">Store</a></td>
+            <td><a class="button" href="adminlogin.jsp">Admin</a></td>
         </table>
         <jsp:include page="/ConnServlet" flush="true" />
     </body>

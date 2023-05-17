@@ -16,6 +16,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        
+        <div id="styledimg"></div>
+
         <%
             Customer customer = (Customer)session.getAttribute("customer");
         %>

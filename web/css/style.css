@@ -7,7 +7,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : nrsmi
 */
 
-
+body {
+   background-color: #abc4ff;
+   color: #002273; 
+}
 
 .button {
     display: inline-block;
