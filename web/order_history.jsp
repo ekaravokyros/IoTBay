@@ -15,35 +15,45 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>Order History</title>
     </head>
-    <body>
-
+    <body action="SearchServlet">
+        <%
+            ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
+            String display = (String) session.getAttribute("display");
+        %>
         <h1>Order History</h1>
-        
-            <table>
-                <td><input type="text" placeholder="Enter Order ID" name="ORDERID"><input class="button" type="submit" value="Search" required="true"></td>
-            </table
-        </form>
-        <br />
-        <form method="post" >
-            
-            <!--/**/action will be once chilled on specific will take you to the order-->
-            <table>
+        <p align="left"><a class="button" href="order_management.jsp">Back</a>
+        <table>
                 <tr>
                     <th><b>Order ID</b></th>  
                     <th><b>Product Name</b></th>  
                     <th><b>Product ID</b></th>        
                     <th><b>Price</b></th>  
                 </tr>
-
+               <%
+                   if (orders != null) {
+                    for (Order o: orders){
+               %>
                 <tr>
-
+                    <th><b><%=o.getORDERID()%></b></th>  
+                    <th><b><%=o.getPRODUCTNAME()%></b></th>  
+                    <th><b><%=o.getPRODUCT_ID()%></b></th>        
+                    <th><b><%=o.getPRICE()%></b></th>  
                 </tr>
-                
+                <% } %>
+        </table>
+   
+        <br>
+        <% } else { %>
+        <span><= (display != null ? display : "")%></span>
+        <% } %>
+        <form method="post" action="SearchServlet">
+            <table>
+                <td><input type="text" placeholder="Enter Order ID" name="ORDERID"><input class="button" type="submit" value="Search" required="true"></td>
             </table>
         </form>
-            </body>
+         </body>    
+            
         </html>
-    
-

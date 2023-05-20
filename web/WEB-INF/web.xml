@@ -36,25 +36,15 @@
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>LoginCustomerServlet</servlet-name>
-        <servlet-class>Controller.LoginCustomerServlet</servlet-class>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>Controller.SearchServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>Controller.LogoutServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-<!--    <servlet>
-        <servlet-name>SearchServletServlet</servlet-name>
-        <servlet-class>Controller.SearchServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>-->
-<!--    <servlet>
         <servlet-name>order_managementServlet</servlet-name>
         <servlet-class>Controller.order_managementServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
-    </servlet>-->
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -94,11 +84,11 @@
 <!--    <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/SearchServlet</url-pattern>
-    </servlet-mapping>-->
-<!--    <servlet-mapping>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>order_managementServlet</servlet-name>
         <url-pattern>/order_managementServlet</url-pattern>
-    </servlet-mapping>    -->
+    </servlet-mapping>
     <session-config>
         <session-timeout>
            30

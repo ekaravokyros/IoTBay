@@ -16,10 +16,6 @@ public class Order implements Serializable {
     private int PRODUCT_ID;
     private double PRICE;
 
-    public Order(){
-    
-    }
-    
     public Order(int ORDERID, String PRODUCTNAME, int PRODUCT_ID, double PRICE) {
         this.ORDERID = ORDERID;
         this.PRODUCTNAME = PRODUCTNAME;
