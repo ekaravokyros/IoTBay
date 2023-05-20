@@ -24,9 +24,12 @@
         %>
         
         <h1>Confirm Payment Information</h1>
+        <!--order id text-->
         <h3>Order <span style="font-weight: normal;">(ID)</span></h3>
+        <!--order amount text-->
         <h3>Total Amount $<span style="font-weight: normal;">(ORDER_AMOUNT)</span></h3>
         
+       <!--payment information text fields-->
         <form action="payment_details.jsp" method="post">
             <table>
                 <tr>
@@ -64,13 +67,16 @@
                 </tr>
             </table>
             
+            <!--confirm button-->
             <input class="button" type="submit" value="Confirm">
-            <a class="button" href="payment_create.jsp">Back</a><p>
-                
+            
+            <!--user input fields are stored into payment session--> 
             <% 
                 Payment payment = new Payment(payment_method, name_on_card, card_number, expiry_date, cvv, date_paid); 
                 session.setAttribute("payment", payment);
             %>
         </form>
+        <!--back button-->
+        <a class="button" href="payment_create.jsp">Back</a><p>
     </body>
 </html>

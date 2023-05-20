@@ -9,10 +9,12 @@
     <body>
     
         <h1>Payment Details</h1>
+        <!--order id text-->
         <h3>Order <span style="font-weight: normal;">(ID)</span></h3>
+        <!--order amount text-->
         <h3>Total Amount $<span style="font-weight: normal;">(ORDER_AMOUNT)</span></h3>
 
-
+        <!--input fields for payment information-->
         <form action="payment_confirm.jsp" method="post">
             <table>
                 <tr>
@@ -53,8 +55,11 @@
                     <td><input type="date" id="date_paid" name="date_paid" required/></td>
                 </tr>
             </table>
+            <!--create button-->
             <input class="button" type="submit" value="Create">
         </form>
+        
+        <!--back button-->
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>

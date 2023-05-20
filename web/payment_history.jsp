@@ -16,7 +16,7 @@
         <%
             String searched = request.getParameter("searched");
 
-            // Dummy data based on payment ID 
+            // declaring dummy data string values
             String paymentID = request.getParameter("paymentID_filter");
             String orderID = "";
             String paymentMethod = "";
@@ -25,7 +25,8 @@
             String expiryDate = "";
             String cvv = "";
             String datePaid = "";
-
+            
+            // dummy data based on payment ID
             if (searched != null && paymentID != null) {
                 if (paymentID.equals("1")) {
                     orderID = "1001";
@@ -56,7 +57,8 @@
         %>
         <h1>Payment History</h1>
         <h3>Search Payment Details by Payment ID and/or Date Paid</h3>
-
+        
+        <!--paymentId/datePaid filter inputs-->
         <form action="payment_history.jsp" method="post">
             <table>
                 <tr>
@@ -67,12 +69,14 @@
                 <td><label for="filter">Date Paid:</label></td>
                 <td><input type="date" id="date_filter" name="date_filter"></td>
             </table>
-
+            
+            <!--search button-->
             <input class="button" type="submit" value="Search">
             <input type="hidden" name="searched" value="searched">
         </form>
-
-        <% if (searched != null && (paymentID.equals("1") || paymentID.equals("2") || paymentID.equals("3"))) { %>
+        
+        
+        <% if (searched != null && (paymentID.equals("1") || paymentID.equals("2") || paymentID.equals("3"))) { // if dummy paymentID is inputted, gives payment record information%>
             <h2>Search Results</h2>
             <p><b>Payment ID:</b> <%= paymentID %></p>
             <p><b>Order ID:</b> <%= orderID %></p>
@@ -82,7 +86,7 @@
             <p><b>Expiry Date:</b> <%= expiryDate %></p>
             <p><b>CVV:</b> <%= cvv %></p>
             <p><b>Date Paid:</b> <%= datePaid %></p>
-        <% } else if (searched != null) { %>
+        <% } else if (searched != null) { // paymentID does not exist %> 
             <h2>No Results Found</h2>
         <% } %>
 

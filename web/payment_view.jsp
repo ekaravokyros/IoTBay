@@ -16,7 +16,7 @@
     <body>
         <% 
             Payment payment = (Payment)session.getAttribute("payment");
-            if (payment == null) {
+            if (payment == null) { // incase user hasnt added payment information, inputs empty values 
                 payment = new Payment("", "", "", "", "", "");
                 session.setAttribute("payment", payment);
             }
@@ -24,6 +24,7 @@
         
         <h1>View Payment Details</h1>
         
+        <!--payment session values are outputted-->
         <table>
             <tr>
                 <td><h3>Payment Information:</h3></td>
@@ -55,7 +56,8 @@
             </tr>
 
         </table>
-
+        
+        <!--back button-->
         <a class="button" href="payment_details.jsp">Back</a><p>
     </body>
 </html>

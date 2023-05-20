@@ -10,12 +10,12 @@
     <body>
         <%
             Payment payment = (Payment)session.getAttribute("payment"); 
-            if (payment == null) {
+            if (payment == null) { // incase user hasnt added payment information, inputs empty values 
                 payment = new Payment("", "", "", "", "", "");
                 session.setAttribute("payment", payment);
             }
             String paymentUpdated = request.getParameter("paymentUpdated");
-            if (paymentUpdated != null) {
+            if (paymentUpdated != null) { 
                 String payment_method = request.getParameter("payment_method");
                 String name_on_card = request.getParameter("name_on_card");
                 String card_number = request.getParameter("card_number");
@@ -30,6 +30,8 @@
         <h1>Update Payment Information</h1>
         
         <h2><span> <%= (paymentUpdated != null) ? "Update was successful!":"" %> </span></h2>
+        
+        <!--payment information input fields with inputs from payment session placed-->
         <form action="payment_update.jsp" method="post">
             <table>
                 <tr>
@@ -68,10 +70,12 @@
                 </tr>
             </table>
             
+            <!--update button-->
             <input class="button" type="submit" value="Update">
             <input type="hidden" name="paymentUpdated" value="paymentUpdated">
-            
         </form>
+             
+        <!--back button-->        
         <p align="right"><a class="button" href="payment_details.jsp">Back</a></p>
     </body>
 </html>
