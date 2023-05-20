@@ -16,7 +16,7 @@
         <%
             String searched = request.getParameter("searched");
 
-            // Dummy data based on payment ID
+            // Dummy data based on payment ID 
             String paymentID = request.getParameter("paymentID_filter");
             String orderID = "";
             String paymentMethod = "";
@@ -31,7 +31,7 @@
                     orderID = "1001";
                     paymentMethod = "Credit Card";
                     cardholderName = "John Doe";
-                    cardNumber = "7579 8302 8984 2898";
+                    cardNumber = "7579830289842898";
                     expiryDate = "2025-12";
                     cvv = "123";
                     datePaid = "2023-05-01";
@@ -39,7 +39,7 @@
                     orderID = "1002";
                     paymentMethod = "Debit Card";
                     cardholderName = "Jane Smith";
-                    cardNumber = "6496 3783 7259 9010";
+                    cardNumber = "6496378372599010";
                     expiryDate = "2024-06";
                     cvv = "456";
                     datePaid = "2023-05-02";
@@ -47,7 +47,7 @@
                     orderID = "1003";
                     paymentMethod = "Credit Card";
                     cardholderName = "David Johnson";
-                    cardNumber = "7576 1188 4332 5652";
+                    cardNumber = "757611884332 652";
                     expiryDate = "2024-09";
                     cvv = "789";
                     datePaid = "2023-05-03";
