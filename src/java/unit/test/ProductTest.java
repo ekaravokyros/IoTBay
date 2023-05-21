@@ -2,18 +2,20 @@
  *
  * @author NICHOLAS SMITH 11378054
  */
-package unit.test;
 
+package unit.test;
 import junit.framework.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
+import java.sql.*;
 import DAO.*;
 import Model.*;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,7 +25,7 @@ public class ProductTest {
     private DBConnector connector;
     private Connection conn;
     private DBManager db;    
-    
+
     public ProductTest(){
         try {
             connector = new DBConnector();
@@ -33,9 +35,17 @@ public class ProductTest {
             Logger.getLogger(ProductTest.class.getName()).log(Level.SEVERE, null, ex);          
         }
     }
-    
+
     @Test
-    public void A_testCreateProduct(){
+    public void A_testShowProducts () throws SQLException{
+        ArrayList<Product> productlist = db.showProducts();
+        int list_count = productlist.size();
+        int table_count = db.countProducts();
+        assertEquals(list_count , table_count);
+    }
+
+    @Test
+    public void B_testCreateProduct(){
         String product_Name =  "Soil Moisture Sensor"; 
         try {
             db.addProduct("Soil Moisture Sensor","A sensor to measure the moisture content in soil","YL-69","Sensor","Keyestudio","3.3V - 5V",5,"1 year",1.99,150,true,"");
@@ -47,7 +57,7 @@ public class ProductTest {
     }
     
     @Test
-    public void B_testReadProduct () {
+    public void C_testReadProduct () {
         String product_Name =  "Soil Moisture Sensor"; 
         try {
             Product product = db.getProduct(product_Name);
@@ -57,7 +67,7 @@ public class ProductTest {
         }
     }
     @Test
-    public void C_testUpdateProduct(){
+    public void D_testUpdateProduct(){
         String product_Name =  "Soil Moisture Sensor"; 
         //Stock value to be updated, all other values remain the same
         int updated_stock = 100;
@@ -67,7 +77,6 @@ public class ProductTest {
             db.updateProduct(product_ID,"Soil Moisture Sensor","A sensor to measure the moisture content in soil","YL-69","Sensor","Keyestudio","3.3V - 5V",5,"1 year",1.99,updated_stock,true,"");
             product = db.getProduct(product_Name);
             assertEquals(updated_stock , product.getProduct_Stock());
-            
         } catch (SQLException ex) {
             Logger.getLogger(ProductTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -78,9 +87,9 @@ public class ProductTest {
             Logger.getLogger(ProductTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Test
-    public void D_testDeleteProduct() {
+    public void E_testDeleteProduct() {
         String product_Name =  "Soil Moisture Sensor"; 
         try {
             Product product = db.getProduct(product_Name);
@@ -92,3 +101,4 @@ public class ProductTest {
         }
     }   
 }
+

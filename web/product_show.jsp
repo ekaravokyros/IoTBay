@@ -36,7 +36,7 @@
                 <th><b>Product Warranty</b></th>                                  
                 <th><b>Product Price</b></th>  
                 <th><b>Product Stock</b></th>                 
-                <th><b>Product Availability</b></th>                  
+                <th><b>Product Available</b></th>                  
                 <th><b>Last Edited By</b></th>
             </tr>
             <%
@@ -55,7 +55,7 @@
                 <td><p><%=p.getProduct_Warranty()%></p></td>
                 <td><p><%=p.getProduct_Price_formatted()%></p></td>
                 <td><p><%=p.getProduct_Stock()%></p></td>
-                <td><p><%=p.isProduct_Avail()%></p></td>
+                <td><p><%=p.strProduct_Avail()%></p></td>
                 <td><p><%=p.getLast_Edited_By()%></p></td>
             </tr>
                 

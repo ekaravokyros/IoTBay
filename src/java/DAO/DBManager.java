@@ -111,7 +111,16 @@ public class DBManager {
         }
         return null; 
     }
-
+    public int countProducts ()
+            throws SQLException {
+        String query = "SELECT COUNT(*) FROM JB.PRODUCTS";
+        ResultSet rs = st.executeQuery(query);
+        int count = 0;
+        while (rs.next()) {
+                count = rs.getInt(1);           
+        }
+        return count;
+    }
 //--------------------END OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
     
 //--------------------START OF CODE AUTHORED BY EVELYN KARAVOKYROS 14244608 --------------------

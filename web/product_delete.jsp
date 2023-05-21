@@ -78,7 +78,7 @@
                 </tr>                
                 <tr>
                     <td><label for="product_Avail">Product Availability: </td>
-                    <td><%=product.isProduct_Avail()%></td>
+                    <td><%=product.strProduct_Avail()%></td>
                     <td></td>
                 </tr>                     
                 <tr>
