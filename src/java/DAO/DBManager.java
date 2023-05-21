@@ -111,7 +111,16 @@ public class DBManager {
         }
         return null; 
     }
-
+    public int countProducts ()
+            throws SQLException {
+        String query = "SELECT COUNT(*) FROM JB.PRODUCTS";
+        ResultSet rs = st.executeQuery(query);
+        int count = 0;
+        while (rs.next()) {
+                count = rs.getInt(1);           
+        }
+        return count;
+    }
 //--------------------END OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
     
 //--------------------START OF CODE AUTHORED BY EVELYN KARAVOKYROS 14244608 --------------------
@@ -255,6 +264,40 @@ public boolean checkORDERID(int ORDERID)  //funtion that checks that the order i
             }
         }
         return false;
+    }
+
+
+
+
+// --------------------------------------CODE BY SAKET DHADGE 24563797-------------------------------------
+    public boolean checkCustomer_firstname(String customer_search) 
+            throws SQLException {
+        String query = "SELECT * FROM JB.CUSTOMER WHERE (CUSTOMER_FIRSTNAME) = '"+customer_search+"'";
+        ResultSet rs = st.executeQuery(query);
+
+        while (rs.next()) {
+            String checkCustomer_firstname = rs.getString(1);
+
+            if (checkCustomer_firstname.equals(customer_search)){
+                return true;
+            }
+        }
+        return false;
+    }
+        public Customer getCustomer (String user_search)
+            throws SQLException {
+        String query = "SELECT * FROM JB.CUSTOMER WHERE (CUSTOMER_FIRSTNAME) = '"+user_search+"'";
+        ResultSet rs = st.executeQuery(query);      
+        while (rs.next()) {
+            String customer_firstname = rs.getString(1);
+            String customer_lastname = rs.getString(2);
+            String customer_email = rs.getString(3);
+            String customer_password = rs.getString(4);
+            String customer_number = rs.getString(5);
+            
+            return new Customer(customer_firstname, customer_lastname, customer_email, customer_password, customer_number);
+        }
+        return null; 
     }
 
 

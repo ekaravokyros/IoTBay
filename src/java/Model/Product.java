@@ -144,7 +144,14 @@ public class Product implements Serializable {
     public boolean isProduct_Avail() {
         return product_Avail;
     }
-
+    
+    public String strProduct_Avail() {
+        if (product_Avail == true){
+            return "Yes";
+        } else {
+            return "No";        
+        }                     
+    }
     public void setProduct_Avail(boolean product_Avail) {
         this.product_Avail = product_Avail;
     }

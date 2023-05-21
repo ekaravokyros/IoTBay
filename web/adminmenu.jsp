@@ -12,6 +12,9 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Admin Menu</title>
     </head>
+    
+    <!--------------LOGIN USERNAME 'admin112233' AND PASSWORD '!welcome!'-------------->
+    
     <body>
         <%
             String username1 =  request.getParameter("username1");
