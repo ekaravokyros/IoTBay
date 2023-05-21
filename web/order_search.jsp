@@ -13,21 +13,35 @@
         <title>JSP Page</title>
     </head>
         <%
-                
-                Order order = (Order) session.getAttribute("order");
+            Order order = (Order) session.getAttribute("order");
         %>
     <body>
         <h1>Order Page</h1>
         
-        
-        <!--<form action="SearchServlet" method="post">-->
+   
             <table>
+                <tr>
+                <td><label for="ORDERID">Product Warranty: </td>
+                <td><%=order.getORDERID()%></td>
+                <td></td>
+            </tr>                                
             <tr>
-                <td><label for="PRODUCTNAME">Product Name: </td>
+                <td><label for="PRODUCTNAME">Product Price: </td>
                 <td><%=order.getPRODUCTNAME()%></td>
                 <td></td>
-            </tr>
+            </tr>                
+            <tr>
+                <td><label for="PRODUCT_ID">Product Stock: </td>
+                <td><%=order.getPRODUCT_ID()%></td>
+                <td></td>
+            </tr>                
+            <tr>
+                <td><label for="PRICE">Product Availability: </td>
+                <td><%=order.getPRICE()%></td>
+                <td></td>
+            </tr>                       
+            
             </table>
-        <!--</form>-->
+
     </body>
 </html>

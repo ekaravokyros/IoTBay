@@ -1,5 +1,5 @@
 //this servlet is supposed to display the information found in the actual database     
-     
+ 
      package Controller;
 
      import java.io.IOException;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
    
 
      @Override   
-     protected void doPost(HttpServletRequest request, HttpServletResponse response)   
+     protected void doGet(HttpServletRequest request, HttpServletResponse response)   
              throws ServletException, IOException {
          HttpSession session = request.getSession();
          DBManager manager = (DBManager) session.getAttribute("manager");
@@ -31,17 +31,17 @@ import java.util.logging.Logger;
          
          
          try {
-             if(!manager.checkORDERID(ORDERID)){
-                 Order order = manager.findOrder(ORDERID);
-                 session.setAttribute("order",order);
-                 request.getRequestDispatcher("order_search.jsp").include(request, response);
-                  response.sendRedirect("order_history.jsp");
-             }else if(manager.checkORDERID(ORDERID)){
-                 session.setAttribute("order", "Order might not there");
-                 request.getRequestDispatcher("order_search.jsp");
-                 response.sendRedirect("order_search.jsp");
+             Order order = manager.findOrder(ORDERID);
+             if(manager.checkORDERID(ORDERID)){
+                 session.setAttribute("orders", order);
+                    request.getRequestDispatcher("order_search.jsp").include(request, response);
+                    session.setAttribute("display", "Order");
+                    response.sendRedirect("order_search.jsp");
+             
                  
-             }
+             }else {session.setAttribute("search", "Order does NOT exist");
+                    request.getRequestDispatcher("order_history.jsp").include(request, response);
+                    response.sendRedirect("order_history.jsp");}
 
                
          } catch (SQLException | NullPointerException ex) {

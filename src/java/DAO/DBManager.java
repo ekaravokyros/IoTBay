@@ -188,7 +188,7 @@ public class DBManager {
         
      // makes sure the order actually exists
     public Order findOrder(int ORDERID) throws SQLException {  
-    String fetch = "select * from JB.ORDERS where (ORDERID) = '" + ORDERID +"'";
+    String fetch = "select * from JB.ORDERS where (ORDERID) = '" +ORDERID;
     ResultSet rs = st.executeQuery(fetch);
     
     while (rs.next()) {
