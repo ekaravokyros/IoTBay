@@ -1,6 +1,6 @@
 <%-- 
-    Document   : user_show
-    Created on : 21/05/2023, 8:20:53 PM
+    Document   : viewUser
+    Created on : 17/05/2023, 7:38:12 AM
     Author     : dsake
 --%>
 
@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
-        <title>JSP Page</title>
+        <title>Manage Users Page</title>
     </head>
     <body>
         <h1>Hello World!</h1>
