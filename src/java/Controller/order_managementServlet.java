@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-
 package Controller;
 
     import java.io.IOException;
@@ -14,7 +9,7 @@ package Controller;
     import javax.servlet.http.HttpServletRequest;
     import javax.servlet.http.HttpServletResponse;
     import javax.servlet.http.HttpSession;
-    import DAO.*;
+    import DAO.DBManager;
     import Model.Order;
     import java.util.ArrayList;
 
@@ -24,19 +19,19 @@ public class order_managementServlet extends HttpServlet{
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
             HttpSession session = request.getSession();
-            ORDERDBManager manager = (ORDERDBManager) session.getAttribute("manager");
-            
+            DBManager manager = (DBManager) session.getAttribute("manager");
+//            
             try {
                 ArrayList<Order> orders = manager.fetchOrders();
                 if (orders != null) {
                     session.setAttribute("orders", orders);
                     request.getRequestDispatcher("order_history.jsp").include(request, response);
-                   
+                    session.setAttribute("display", "Orders");
+                    response.sendRedirect("order_history.jsp");
                 } 
             } catch (SQLException ex){
                 Logger.getLogger(order_managementServlet.class.getName()).log(Level.SEVERE, null, ex); 
-                
+//                
             }
-            request.getRequestDispatcher("order_history.jsp").include(request, response);
        }
 }

@@ -1,4 +1,5 @@
 //this servlet is supposed to display the information found in the actual database     
+     
      package Controller;
 
      import java.io.IOException;
@@ -9,7 +10,9 @@
      import javax.servlet.http.HttpServletResponse;
      import javax.servlet.http.HttpSession;
      import Model.Order;
-     import DAO.ORDERDBManager;
+     import DAO.DBManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
  
 
@@ -20,25 +23,29 @@
      protected void doPost(HttpServletRequest request, HttpServletResponse response)   
              throws ServletException, IOException {
          HttpSession session = request.getSession();
+         DBManager manager = (DBManager) session.getAttribute("manager");
+         session.setAttribute("order", null);
+         session.setAttribute("search", null);
          String a = request.getParameter("ORDERID");
          int ORDERID = Integer.parseInt(a);
-                 
-         ORDERDBManager manager = (ORDERDBManager) session.getAttribute("manager");
-         Order order = null;
          
          
          try {
              if(!manager.checkORDERID(ORDERID)){
-                 session.setAttribute("Error", order);
-                 request.getRequestDispatcher("order_history.jsp");
+                 Order order = manager.findOrder(ORDERID);
+                 session.setAttribute("order",order);
+                 request.getRequestDispatcher("order_search.jsp").include(request, response);
+                  response.sendRedirect("order_history.jsp");
              }else if(manager.checkORDERID(ORDERID)){
-                 session.setAttribute("order", order);
+                 session.setAttribute("order", "Order might not there");
                  request.getRequestDispatcher("order_search.jsp");
+                 response.sendRedirect("order_search.jsp");
+                 
              }
 
                
          } catch (SQLException | NullPointerException ex) {
-             System.out.println(ex.getMessage() == null ? "OrderID does not exist" : "Welcome");
+             Logger.getLogger(ProductSearchServlet.class.getName()).log(Level.SEVERE, null, ex); 
          }
      }       
 

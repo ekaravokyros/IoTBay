@@ -18,13 +18,21 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Order History</title>
     </head>
-    <body action="SearchServlet">
+    <body>
         <%
             ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("orders");
             String display = (String) session.getAttribute("display");
         %>
         <h1>Order History</h1>
-        <p align="left"><a class="button" href="order_management.jsp">Back</a>
+        <form method="post" action="SearchServlet">
+            <table>
+                <td><input type="text" placeholder="Enter Order ID" name="ORDERID"><input class="button" type="submit" value="Search" required="true"></td>
+            </table>
+        </form>
+        <p align="right"><a class="button" href="order_management.jsp">Back</a>
+            <table>
+                <p align="left"><a class="button" href="order_management.jsp">Update</a><a class="button" href="DeleteOrder">Delete</a><a class="button" href="order_management.jsp">Add
+            </table>
         <table>
                 <tr>
                     <th><b>Order ID</b></th>  
@@ -49,11 +57,7 @@
         <% } else { %>
         <span><= (display != null ? display : "")%></span>
         <% } %>
-        <form method="post" action="SearchServlet">
-            <table>
-                <td><input type="text" placeholder="Enter Order ID" name="ORDERID"><input class="button" type="submit" value="Search" required="true"></td>
-            </table>
-        </form>
+        
          </body>    
             
         </html>

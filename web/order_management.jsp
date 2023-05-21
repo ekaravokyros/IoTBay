@@ -23,8 +23,9 @@
         </div>
         <h1> Order Management</h1>
         <table>
-            <td><p align="left"><a class="button" href="order_history.jsp">Order History</a></td>
-            <td><p align="left"><a class="button" href="main.jsp">Back</a></td>
+            <td><p align="left"><a class="button" href="order_managementServlet">Order History</a></td>
+            <td><p align="right"><a class="button" href="cart.jsp">Cart</a></td>
+            <td><p align="right"><a class="button" href="main.jsp">Back</a></td>
             
         </table>
         
