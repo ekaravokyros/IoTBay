@@ -14,6 +14,10 @@
     import java.util.logging.*;
     import Model.Order;
     import DAO.*;
+import Model.Product;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import org.junit.Test;
 
 
 
@@ -37,6 +41,14 @@
             }catch (ClassNotFoundException | SQLException ex){
                 Logger.getLogger(TestOrderDB.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        
+        @Test
+        public void A_testShowOrders () throws SQLException{
+            ArrayList<Order> orderlist = db.fetchOrders();
+            int list_count = orderlist.size();
+            int table_count = db.countOrders();
+            assertEquals(list_count , table_count);
         }
         
         //This reads in the decision that is being tested

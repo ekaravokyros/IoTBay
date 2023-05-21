@@ -217,7 +217,7 @@ public class DBManager {
 
 //Add an order to the database   
 public void addOrder(int ORDERID, String PRODUCTNAME, int PRODUCT_ID, double PRICE) throws SQLException {                   //code for add-operation       
-  st.executeUpdate("INSERT INTO JB.ORDERS" + "VALUES ('"+ORDERID+"','"+PRODUCT_ID+"','"+PRICE+"')");   
+  st.executeUpdate("INSERT INTO JB.ORDERS" + "VALUES ('" + ORDERID + "','"+PRODUCT_ID+"','"+PRICE+"')");   
 
 }
    
@@ -266,7 +266,16 @@ public boolean checkORDERID(int ORDERID)  //funtion that checks that the order i
         return false;
     }
 
-
+public int countOrders ()
+            throws SQLException {
+        String query = "SELECT COUNT(*) FROM JB.ORDERS";
+        ResultSet rs = st.executeQuery(query);
+        int count = 0;
+        while (rs.next()) {
+                count = rs.getInt(1);           
+        }
+        return count;
+    }
 
 
 // --------------------------------------CODE BY SAKET DHADGE 24563797-------------------------------------
