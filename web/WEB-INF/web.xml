@@ -54,7 +54,15 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>Controller.LogoutServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
-    </servlet>    
+    </servlet>
+    <servlet>
+        <servlet-name>UserSearchServlet</servlet-name>
+        <servlet-class>Controller.UserSearchServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    
+    
+    
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -98,6 +106,10 @@
     <servlet-mapping>
         <servlet-name>order_managementServlet</servlet-name>
         <url-pattern>/order_managementServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserSearchServlet</servlet-name>
+        <url-pattern>/UserSearchServlet</url-pattern>
     </servlet-mapping>
 <session-config>
 <session-timeout>

@@ -267,4 +267,38 @@ public boolean checkORDERID(int ORDERID)  //funtion that checks that the order i
     }
 
 
+
+
+// --------------------------------------CODE BY SAKET DHADGE 24563797-------------------------------------
+    public boolean checkCustomer_firstname(String customer_search) 
+            throws SQLException {
+        String query = "SELECT * FROM JB.CUSTOMER WHERE () = '"+customer_search+"'";
+        ResultSet rs = st.executeQuery(query);
+
+        while (rs.next()) {
+            String checkCustomer_firstname = rs.getString(1);
+
+            if (checkCustomer_firstname.equals(customer_search)){
+                return true;
+            }
+        }
+        return false;
+    }
+        public Customer getCustomer (String user_search)
+            throws SQLException {
+        String query = "SELECT * FROM JB.CUSTOMER WHERE (CUSTOMER_FIRSTNAME) = '"+user_search+"'";
+        ResultSet rs = st.executeQuery(query);      
+        while (rs.next()) {
+            String customer_firstname = rs.getString(1);
+            String customer_lastname = rs.getString(2);
+            String customer_email = rs.getString(3);
+            String customer_password = rs.getString(4);
+            String customer_number = rs.getString(5);
+            
+            return new Customer(customer_firstname, customer_lastname, customer_email, customer_password, customer_number);
+        }
+        return null; 
+    }
+
+
 }
