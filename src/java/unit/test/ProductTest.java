@@ -1,9 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ *
+ * @author NICHOLAS SMITH 11378054
  */
-package unit.test;
 
+package unit.test;
 import junit.framework.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -77,7 +77,6 @@ public class ProductTest {
             db.updateProduct(product_ID,"Soil Moisture Sensor","A sensor to measure the moisture content in soil","YL-69","Sensor","Keyestudio","3.3V - 5V",5,"1 year",1.99,updated_stock,true,"");
             product = db.getProduct(product_Name);
             assertEquals(updated_stock , product.getProduct_Stock());
-
         } catch (SQLException ex) {
             Logger.getLogger(ProductTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -102,3 +101,4 @@ public class ProductTest {
         }
     }   
 }
+

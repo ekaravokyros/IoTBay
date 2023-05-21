@@ -17,7 +17,7 @@ public class DBManager {
     public DBManager(Connection conn) throws SQLException {       
        st = conn.createStatement();   
     }
-
+    
 //--------------------START OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
     public void addProduct (String product_Name, String product_Description, String product_Model, String product_Type, String product_Manufacturer, String product_Powersource, double product_Weight, String product_Warranty, double product_Price, int product_Stock, boolean product_Avail, String last_Edited_By)
             throws SQLException {
@@ -122,4 +122,149 @@ public class DBManager {
         return count;
     }
 //--------------------END OF CODE AUTHORED BY NICHOLAS SMITH 11378054 --------------------
+    
+//--------------------START OF CODE AUTHORED BY EVELYN KARAVOKYROS 14244608 --------------------
+
+    //Finding customer via the email & password provided in the database
+    
+    public Customer findCustomer(String email, String password) throws SQLException {   
+        
+        //Setting up select sql query string 
+        String fetch = "select * from JB.CUSTOMER where CUSTOMER_EMAIL = '" + email + "' and CUSTOMER_PASSWORD = '" + password + "'"; 
+        
+        //Execute query using statement field and add results to a ResultSet
+        ResultSet rs = st.executeQuery(fetch);
+        
+        //Search ResultSet for customer using following parameters
+        while (rs.next()){
+           String CUSTOMER_EMAIL = rs.getString(3);
+           String CUSTOMER_PASSWORD = rs.getString(4);
+           if (CUSTOMER_EMAIL.equals(email) && CUSTOMER_PASSWORD.equals(password)){
+               String CUSTOMER_FIRSTNAME = rs.getString(1);
+               String CUSTOMER_LASTNAME = rs.getString(2);
+               String CUSTOMER_NUMBER = rs.getString(5);
+               return new Customer (CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, CUSTOMER_EMAIL, CUSTOMER_PASSWORD, CUSTOMER_NUMBER);
+           }
+        }              
+        return null;   
+    }
+        
+        //Add a customer details into  database   
+        public void addCustomer(String firstname, String lastname, String email, String password) throws SQLException {  
+            st.executeUpdate("INSERT INTO JB.CUSTOMER " + "VALUES ('" + firstname + "', '" + lastname + "', '" + email +  "', '" + password +"')" );   
+        }
+        
+        //Update customer details in  database   
+        public void updateCustomer(String firstname, String lastname, String email, String password) throws SQLException {       
+            st.executeUpdate("UPDATE JB.CUSTOMER SET CUSTOMER_FIRSTNAME='"+ firstname + "', CUSTOMER_LASTNAME='" + lastname + "', CUSTOMER_EMAIL='" + email + "', CUSTOMER_PASSWORD='" + password +  "'" );
+        }     
+        
+        //Delete customer from  database   
+        public void deleteCustomer(String email) throws SQLException{       
+            st.executeUpdate("DELETE FROM JB.CUSTOMER WHERE CUSTOMER_EMAIL ='" + email + "'");
+        }
+        
+        //Checking if customer exists
+        public boolean checkCustomer(String email, String password) throws SQLException {
+            String fetch = "SELECT * FROM JB.CUSTOMER where CUSTOMER_EMAIL ='" + email + "'AND CUSTOMER_PASSWORD='" + password + "'";
+            ResultSet rs = st.executeQuery(fetch);
+
+            while (rs.next()) {
+               String CUSTOMER_EMAIL = rs.getString(3);
+               String CUSTOMER_PASSWORD = rs.getString(4);
+               if (CUSTOMER_EMAIL.equals(email) && CUSTOMER_PASSWORD.equals(password)){
+                   return true;
+               }
+            }
+            return false;
+        }
+           
+        public ArrayList<Customer> fetchCustomers() throws SQLException {
+        String fetch = "SELECT *  FROM JB.CUSTOMER";
+        ResultSet rs = st.executeQuery(fetch);
+        ArrayList<Customer>  temp = new ArrayList();
+        
+        while (rs.next()) {
+            String CUSTOMER_FIRSTNAME = rs.getString(1);
+            String CUSTOMER_LASTNAME = rs.getString(2);
+            String CUSTOMER_EMAIL = rs.getString(3);
+            String CUSTOMER_PASSWORD = rs.getString(4);
+            String CUSTOMER_NUMBER = rs.getString(5);
+            temp.add(new Customer (CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, CUSTOMER_EMAIL, CUSTOMER_PASSWORD, CUSTOMER_NUMBER));
+        }
+        return temp;
+    }
+        
+     // makes sure the order actually exists
+    public Order findOrder(int ORDERID) throws SQLException {  
+    String fetch = "select * from JB.ORDERS where (ORDERID) = '" + ORDERID +"'";
+    ResultSet rs = st.executeQuery(fetch);
+    
+    while (rs.next()) {
+        int newORDERID = rs.getInt(1);
+        if(newORDERID == ORDERID){
+            ORDERID = rs.getInt(1);
+            String PRODUCTNAME = rs.getString(2);
+            int PRODUCT_ID = rs.getInt(3);
+            
+            double PRICE = rs.getDouble(2);
+            return new Order(ORDERID ,PRODUCTNAME, PRODUCT_ID, PRICE);
+        }
+    }
+      return null;   
+}
+
+
+//Add an order to the database   
+public void addOrder(int ORDERID, String PRODUCTNAME, int PRODUCT_ID, double PRICE) throws SQLException {                   //code for add-operation       
+  st.executeUpdate("INSERT INTO JB.ORDERS" + "VALUES ('"+ORDERID+"','"+PRODUCT_ID+"','"+PRICE+"')");   
+
+}
+   
+
+//deletes an order from the database   
+public void deleteOrder(int newORDERID) throws SQLException{       
+   //code for delete-operation   
+    st.executeUpdate("DELETE FROM JB.ORDERS WHERE ORDERID = "+newORDERID); 
+}
+
+        
+
+
+//this is the function used to update the database 
+public void updateOrder(int ORDERID, String PRODUCTNAME, int PRODUCT_ID, double PRICE) throws SQLException {       
+       //code for update-operation 
+       st.executeUpdate("UPDATE JB.Orders SET NAME ='" + ORDERID + "', '" + PRODUCTNAME + "', '" + PRODUCT_ID + "','" + PRICE + "')");  
+    }
+
+//this is what is used to print out the database information
+public ArrayList<Order> fetchOrders() throws SQLException{ 
+    String fetch = "select * from JB.ORDERS ORDER BY ORDERID";
+        ResultSet rs = st.executeQuery(fetch);
+        ArrayList<Order> orders = new ArrayList();
+        while (rs.next()){
+        
+            int ORDERID = rs.getInt(1);
+            String PRODUCTNAME = rs.getString(2); 
+            int PRODUCT_ID = rs.getInt(3);
+            double PRICE = rs.getDouble(4);
+            orders.add(new Order(ORDERID, PRODUCTNAME, PRODUCT_ID,PRICE));
+        }
+        return orders;
+}
+public boolean checkORDERID(int ORDERID)  //funtion that checks that the order id is in the database
+            throws SQLException {
+        String query = "SELECT * FROM JB.ORDERS WHERE (ORDERID) = "+ ORDERID;
+        ResultSet rs = st.executeQuery(query);
+        
+        while (rs.next()) {
+            int ID = rs.getInt(1);
+            if (ID == ORDERID){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }

@@ -12,9 +12,14 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Login</title>
     </head>
+    <%
+            String Exist_err = (String) session.getAttribute("Exist_err"); 
+        %>
     <body>
         <h1>Login</h1>
-        <form action="welcome_1.jsp" method="post">
+        
+        <!--<form action="welcome_1.jsp" method="post">-->
+        <form action="LoginCustomerServlet" method="post">
             <table>
                 <tr>
                     <td><label for="email">Email</label></td>
@@ -36,6 +41,7 @@
                 </tr>
             </table>          
         </form>
+        <span><%= (Exist_err != null ? Exist_err : "")%></span><br>
         <p align="right"><a class="button" href="index.jsp">Home</a></p>
     </body>
 </html>

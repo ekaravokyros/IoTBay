@@ -4,11 +4,8 @@
  */
 package Model;
 import java.io.Serializable;
-//import java.text.NumberFormat;
-/**
- *
- * @author nrsmi
- */
+// this class stores all of the getters and setter to get the information for the pages and delivering it to the next
+// at the same time the setters and used to change and make updates
 
 public class Order implements Serializable {
     private int ORDERID;

@@ -23,12 +23,12 @@
                 String password = request.getParameter("password");
                 String fname = request.getParameter("fname");
                 String lname = request.getParameter("lname");
-                String address = request.getParameter("address");
-                String city = request.getParameter("city");
-                String state = request.getParameter("state");
-                String pcode = request.getParameter("pcode");
-                String pnumber = request.getParameter("pnumber");
-                customer = new Customer(email, password, fname, lname, address, city, state, pcode, pnumber); 
+               // String address = request.getParameter("address");
+//                String city = request.getParameter("city");
+//                String state = request.getParameter("state");
+//                String pcode = request.getParameter("pcode");
+                String number = request.getParameter("number");
+                customer = new Customer(fname, lname, email, password, number); 
                 session.setAttribute("customer", customer);
            }
         %>
@@ -56,7 +56,7 @@
                     <td><label for="lname">Last Name</label></td>
                     <td><input type="text" id="lname" name="lname" value="${customer.lname}"></td>
                 </tr>
-                <tr>
+<!--                <tr>
                     <td><label for="address">Address</label></td>
                     <td><input type="text" id="address" name="address" value="${customer.address}"></td>
                 </tr>
@@ -72,9 +72,9 @@
                     <td><label for="pcode">Post Code</label></td>
                     <td><input type="integer" id="pcode" name="pcode" value="${customer.pcode}"></td>
                 </tr>
-                <tr>
+                <tr>-->
                     <td><label for="pnumber">Phone Number</label></td>
-                    <td><input type="integer" id="pnumber" name="pnumber" value="${customer.pnumber}"></td>
+                    <td><input type="integer" id="number" name="number" value="${customer.number}"></td>
                 </tr>
                 <tr><td></td>
                     <td>

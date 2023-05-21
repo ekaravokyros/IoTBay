@@ -45,6 +45,16 @@
         <servlet-class>Controller.order_managementServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
+        <servlet>
+        <servlet-name>LoginCustomerServlet</servlet-name>
+        <servlet-class>Controller.LoginCustomerServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+        <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>Controller.LogoutServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>    
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
@@ -74,6 +84,14 @@
         <url-pattern>/ProductManageServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>LoginCustomerServlet</servlet-name>
+        <url-pattern>/LoginCustomerServlet</url-pattern>
+    </servlet-mapping>
+      <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+<servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/SearchServlet</url-pattern>
     </servlet-mapping>
@@ -81,9 +99,9 @@
         <servlet-name>order_managementServlet</servlet-name>
         <url-pattern>/order_managementServlet</url-pattern>
     </servlet-mapping>
-    <session-config>
-        <session-timeout>
+<session-config>
+<session-timeout>
            30
        </session-timeout>
-    </session-config>
+</session-config>
 </web-app>
