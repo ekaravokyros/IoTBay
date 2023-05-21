@@ -272,7 +272,7 @@ public boolean checkORDERID(int ORDERID)  //funtion that checks that the order i
 // --------------------------------------CODE BY SAKET DHADGE 24563797-------------------------------------
     public boolean checkCustomer_firstname(String customer_search) 
             throws SQLException {
-        String query = "SELECT * FROM JB.CUSTOMER WHERE () = '"+customer_search+"'";
+        String query = "SELECT * FROM JB.CUSTOMER WHERE (CUSTOMER_FIRSTNAME) = '"+customer_search+"'";
         ResultSet rs = st.executeQuery(query);
 
         while (rs.next()) {
