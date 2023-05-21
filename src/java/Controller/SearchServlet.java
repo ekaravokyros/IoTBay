@@ -1,4 +1,4 @@
-     
+//this servlet is supposed to display the information found in the actual database     
      package Controller;
 
      import java.io.IOException;
